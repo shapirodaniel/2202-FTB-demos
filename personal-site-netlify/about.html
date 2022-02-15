@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>About Me</title>
+    <head>
+      <title>Daniel Shapiro | About</title>
+      <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+          padding: 1rem;
+        }
+
+        nav {
+          display: flex;
+          justify-content: flex-end;
+          padding: 1rem 0;
+        }
+
+        nav a {
+          margin-left: 1rem;
+          color: inherit;
+          text-decoration: none;
+        }
+
+        a.active {
+          color: blue;
+          border-bottom: 1px solid blue;
+        }
+
+        img {
+          width: 100%;
+        }
+      </style>
+    </head>
+  </head>
+  <body>
+    <header>
+      <h1>Daniel Shapiro, Software Engineer</h1>
+      <nav>
+        <a href="./home.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./portfolio.html">Portfolio</a>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>My Interests</h2>
+        <ul>
+          <li>Coding</li>
+          <li>Baking</li>
+          <li>Kayaking</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Places I've Visited Recently</h2>
+        <ul>
+          <li>Paris</li>
+          <li>Kentucky</li>
+          <li>Las Vegas</li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <hr />
+      &copy; 2021 Daniel Shapiro, some rights reserved
+    </footer>
+    <script>
+      const pathname = window.location.pathname
+        .replace('personal-site-netlify/', '')
+        .replace('.html', '')
+        .slice(1);
+
+      Array.from(document.getElementsByTagName('a')).forEach((node) => {
+        if (node.innerText.toLowerCase() === pathname) {
+          node.classList.add('active');
+        }
+      });
+    </script>
+  </body>
+</html>
