@@ -25,6 +25,10 @@
           text-decoration: none;
         }
 
+        a:hover:not(.active) {
+          border-bottom: 1px solid black;
+        }
+
         a.active {
           color: blue;
           border-bottom: 1px solid blue;
@@ -69,9 +73,9 @@
     </footer>
     <script>
       const pathname = window.location.pathname
-        .replace('personal-site-netlify/', '')
+        .replace(/^.+\//, '')
         .replace('.html', '')
-        .slice(1);
+        .toLowerCase();
 
       Array.from(document.getElementsByTagName('a')).forEach((node) => {
         if (node.innerText.toLowerCase() === pathname) {
