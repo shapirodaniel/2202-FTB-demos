@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: black;
+}
+
+body {
+  height: 2000px;
+  width: 100vw;
+}
+
+body * {
+  border: 4px solid yellow;
+  margin: 8px;
+}
+
+.parent,
+.parent-sibling {
+  /* display: inline-block; */
+  height: 240px;
+  width: 240px;
+  padding: 8px;
+}
+
+.parent-sibling {
+  color: white;
+}
+
+.float-me {
+  /* add float property */
+  height: 60px;
+  width: 60px;
+  background-color: red;
+  border: transparent;
+  margin: 4px;
+  margin-right: 14px;
+}
+
+.parent {
+  /* fixed */
+  /* sticky onscroll */
+  /* relative for child positioning absolute */
+}
+
+.child,
+.child-sibling {
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+}
+
+.child {
+  /* absolute with no relative parent */
+  /* vs absolute with relative parent */
+}
+
+.grandchild {
+  background-color: orange;
+  height: 35px;
+  width: 35px;
+}
