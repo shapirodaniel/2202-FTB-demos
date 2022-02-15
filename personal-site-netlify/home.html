@@ -1,14 +1,39 @@
 <html>
   <head>
     <title>Daniel Shapiro | Software Engineer</title>
+    <link rel="stylesheet" href="./fonts.css" />
     <style>
+      /* this lets me constrain all dimensions of all elements
+      to their border only, rather than overflowing the border to
+      accommodate something like their content box */
       * {
         box-sizing: border-box;
       }
 
+      :root {
+        font-size: 16px;
+      }
+
+      /* CSS units come in various flavors
+      
+        pixels: px
+        percent: 0-100+
+        rem vs em: these units refer to font-size
+        
+        rem: font-size of the :root pseudoelement
+        em: font-size of the parent element
+
+        vh and vw: these conform to the view window width and height
+      
+        (mm, cm, in, etc) -- these are great for print layout, 
+        not so great for actual web layout
+      */
+
       body {
         margin: 0;
         padding: 1rem;
+        width: 100vw;
+        height: 100vh;
       }
 
       nav {
@@ -23,7 +48,14 @@
         text-decoration: none;
       }
 
-      a:hover:not(.active) {
+      #mainTag {
+        background-color: yellow;
+      }
+
+      /* :hover is a pseudoelement that represents a user action
+      in this case, the user is currently hovering over the tag
+      that the pseudoelement is applied to */
+      a:hover {
         border-bottom: 1px solid black;
       }
 
@@ -33,15 +65,19 @@
       }
 
       img {
-        width: 100%;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        object-fit: cover;
       }
     </style>
+    <link rel="stylesheet" href="./home.css" />
   </head>
   <body>
     <header>
-      <h1>Daniel Shapiro, Software Engineer</h1>
+      <h1 style="color: green">Daniel Shapiro, Software Engineer</h1>
       <nav>
-        <a href="./home.html">Home</a>
+        <a id="mainTag" href="./home.html">Home</a>
         <a href="./about.html">About</a>
         <a href="./portfolio.html">Portfolio</a>
       </nav>
