@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background: black;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+#container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  /* flex direction defaults to row */
+  /* flex direction column forces children to stack */
+
+  /* placement of children within flexed parent defaults to flex-start */
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  /* flex-flow determines which direction children flex */
+}
+
+.child {
+  width: 100px;
+  font-size: 20px;
+  border: 5px solid yellow;
+  color: yellow;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+#child-1 {
+  /* flex-grow: proportionate to total space of all children in parent flexbox */
+  /* flex-grow: 2; */
+  height: 200px;
+}
+
+#child-2 {
+  height: 50px;
+  margin: 0 20px;
+}
+
+#child-3 {
+  /* flex-grow: 1; */
+  height: 100px;
+}
+
+/* grid */
+
+#grid {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* wrap-reverse to reorder from last to first */
+}
+
+.grid-child {
+  height: 100px;
+  width: 100px;
+  margin: 1rem;
+  font-size: 20px;
+  border: 5px solid yellow;
+  color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* flex-basis: determines how many elements per flex direction row/col */
+  /* used in conjunction with flex-wrap */
+  flex-basis: 43%;
+}
+
+.grid-child:nth-child(even) {
+  /* align-self to position flexed element within flex-basis */
+  align-self: start; /* end, start */
+}
