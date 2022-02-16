@@ -28,6 +28,18 @@
         margin: 0.5rem 0;
         font-weight: bold;
       }
+
+      p {
+        line-height: 1.4rem;
+      }
+
+      a:visited {
+        color: blue;
+      }
+
+      #footer-links {
+        margin: 1rem 0;
+      }
     </style>
   </head>
   <body>
@@ -79,10 +91,16 @@
     </section>
     <footer>
       <hr />
-      <a href="mailto: daniel.shapiro@fullstackacademy.com">
-        <p>Contact Me</p>
-      </a>
-      <span>&copy; 2022 Daniel Shapiro, some rights reserved.</span>
+      <div id="footer-links">
+        <a href="../home.html"> Visit My Site </a>
+        <a
+          style="margin-left: 1rem"
+          href="mailto: daniel.shapiro@fullstackacademy.com"
+        >
+          Contact Me
+        </a>
+      </div>
+      <div>&copy; 2022 Daniel Shapiro, some rights reserved.</div>
     </footer>
   </body>
 </html>
