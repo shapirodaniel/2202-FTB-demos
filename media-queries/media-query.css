@@ -73,6 +73,18 @@ nav {
   flex-wrap: wrap;
 }
 
+/* 
+  mobile breakpoint: somewhere around 400-500px
+  tablet breakpoint: somewhere around 700-750px
+  desktop layouts: 900px and greater
+*/
+
+@media screen and (max-width: 600px) {
+  #cards {
+    flex-direction: column;
+  }
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -87,9 +99,9 @@ nav {
 
 .card img {
   width: 100%;
+  height: auto;
   max-width: 300px;
   max-height: 200px;
-  height: auto;
   object-fit: cover;
 }
 
