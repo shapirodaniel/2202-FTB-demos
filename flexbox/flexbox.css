@@ -23,10 +23,11 @@ body {
   display: flex;
   /* flex direction defaults to row */
   /* flex direction column forces children to stack */
+  /* flex-direction: column; */
 
   /* placement of children within flexed parent defaults to flex-start */
   align-items: flex-end;
-  justify-content: flex-start;
+  justify-content: space-between;
 
   /* flex-flow determines which direction children flex */
 }
@@ -36,24 +37,25 @@ body {
   font-size: 20px;
   border: 5px solid yellow;
   color: yellow;
-  /* display: flex;
+  display: flex;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
 }
 
 #child-1 {
   /* flex-grow: proportionate to total space of all children in parent flexbox */
-  /* flex-grow: 2; */
+  flex-grow: 2;
   height: 200px;
 }
 
 #child-2 {
+  flex-grow: 1;
   height: 50px;
-  margin: 0 20px;
+  margin: 0 20px; /* when you supply two values to margin, the first one stands for top/bottom, the second one stands for left/right */
 }
 
 #child-3 {
-  /* flex-grow: 1; */
+  flex-grow: 1;
   height: 100px;
 }
 
@@ -63,6 +65,7 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   /* wrap-reverse to reorder from last to first */
 }
@@ -80,10 +83,10 @@ body {
 
   /* flex-basis: determines how many elements per flex direction row/col */
   /* used in conjunction with flex-wrap */
-  flex-basis: 43%;
+  flex-basis: 40%;
 }
 
 .grid-child:nth-child(even) {
   /* align-self to position flexed element within flex-basis */
-  align-self: start; /* end, start */
+  align-self: center; /* end, start */
 }
