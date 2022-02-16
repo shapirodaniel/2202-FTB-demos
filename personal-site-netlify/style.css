@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 0;
+}
+
+nav a {
+  margin-left: 1rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover:not(.active, aside a:hover) {
+  border-bottom: 1px solid black;
+}
+
+a.active {
+  color: blue;
+  border-bottom: 1px solid blue;
+}
+
+p {
+  line-height: 1.4rem;
+}
+
+img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+aside {
+  position: relative;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+aside:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+aside:last-child {
+  margin-bottom: 2rem;
+}
+
+aside a {
+  color: blue;
+  text-decoration: underline;
+}
+
+aside i {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: green;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transform: scale(125%);
+}

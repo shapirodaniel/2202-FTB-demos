@@ -1,41 +1,8 @@
 <html>
   <head>
     <title>Daniel Shapiro | Portfolio</title>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        padding: 1rem;
-      }
-
-      nav {
-        display: flex;
-        justify-content: flex-end;
-        padding: 1rem 0;
-      }
-
-      nav a {
-        margin-left: 1rem;
-        color: inherit;
-        text-decoration: none;
-      }
-
-      a:hover:not(.active) {
-        border-bottom: 1px solid black;
-      }
-
-      a.active {
-        color: blue;
-        border-bottom: 1px solid blue;
-      }
-
-      img {
-        width: 100%;
-      }
-    </style>
+    <link rel="stylesheet" href="./font.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>
@@ -44,16 +11,19 @@
         <a href="./home.html">Home</a>
         <a href="./about.html">About</a>
         <a href="./portfolio.html">Portfolio</a>
+        <a href="./contact.html">Contact</a>
       </nav>
     </header>
     <main>
       <section>
         <aside>
+          <i class="material-icons-outlined"> home </i>
           <h3>Personal Site</h3>
           <p>My personal slice of the interwebs</p>
           <a href="./home.html">Visit My Personal Site</a>
         </aside>
         <aside>
+          <i class="material-icons-outlined"> map </i>
           <h3>Travel Blog</h3>
           <p>If I've been there, I've probably written about it!</p>
           <a href="../travel-blog/index.html">Visit My Travel Blog</a>

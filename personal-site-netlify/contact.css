@@ -1,0 +1,44 @@
+.contact-form {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.contact-form input[name='name'],
+.contact-form textarea {
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type='submit'] {
+  float: right;
+  padding: 1rem;
+  background-color: white;
+  color: blue;
+  border: 2px solid blue;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[type='submit']:hover {
+  background-color: blue;
+  color: white;
+}
+
+footer {
+  margin-top: 3.2rem;
+}

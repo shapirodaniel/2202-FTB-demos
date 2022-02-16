@@ -1,8 +1,12 @@
 <html>
   <head>
-    <title>Daniel Shapiro | Software Engineer</title>
-    <link rel="stylesheet" href="./font.css" />
-    <link rel="stylesheet" href="./style.css" />
+    <title>About Me</title>
+    <head>
+      <title>Daniel Shapiro | Contact</title>
+      <link rel="stylesheet" href="./font.css" />
+      <link rel="stylesheet" href="./style.css" />
+      <link rel="stylesheet" href="./contact.css" />
+    </head>
   </head>
   <body>
     <header>
@@ -15,15 +19,13 @@
       </nav>
     </header>
     <main>
-      <img src="./assets/me-and-lily.jpg" />
-      <div>
-        <h2>Welcome to my site!</h2>
-        <p>
-          I'm a software engineer, bread baker, and avid kayaker. If I'm not
-          coding, you'll find me wrangling my beagle Lily in the parks of
-          Chicago, chasing squirrels.
-        </p>
-      </div>
+      <section class="contact-form">
+        <label for="name">Your name:</label>
+        <input type="text" name="name" />
+        <label for="message">Leave a message:</label>
+        <textarea name="message" cols="60" rows="10"></textarea>
+        <input type="submit" value="Send Message" />
+      </section>
     </main>
     <footer>
       <hr />
