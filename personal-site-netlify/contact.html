@@ -3,9 +3,9 @@
     <title>About Me</title>
     <head>
       <title>Daniel Shapiro | Contact</title>
-      <link rel="stylesheet" href="./font.css" />
-      <link rel="stylesheet" href="./style.css" />
-      <link rel="stylesheet" href="./contact.css" />
+      <link rel="stylesheet" href="./styles/font.css" />
+      <link rel="stylesheet" href="./styles/style.css" />
+      <link rel="stylesheet" href="./styles/contact.css" />
     </head>
   </head>
   <body>
@@ -21,9 +21,9 @@
     <main>
       <section class="contact-form">
         <label for="name">Your name:</label>
-        <input type="text" name="name" />
+        <input id="name" type="text" name="name" />
         <label for="message">Leave a message:</label>
-        <textarea name="message" cols="60" rows="10"></textarea>
+        <textarea id="message" name="message" cols="60" rows="10"></textarea>
         <input type="submit" value="Send Message" />
       </section>
     </main>
@@ -41,6 +41,19 @@
         if (node.innerText.toLowerCase() === pathname) {
           node.classList.add('active');
         }
+      });
+
+      // mock form submission
+      const form = { name: '', message: '' };
+      const nameInput = document.getElementById('name');
+      const messageInput = document.getElementById('message');
+      const submitBtn = document.querySelector('input[type="submit"]');
+
+      submitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        form.name = nameInput.value;
+        form.message = messageInput.value;
+        console.log(form);
       });
     </script>
   </body>
