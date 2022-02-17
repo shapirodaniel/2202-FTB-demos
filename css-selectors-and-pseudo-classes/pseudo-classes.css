@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* table */
+
+table {
+  /* border-collapse: collapse; */
+}
+
+th,
+td {
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+th {
+  text-align: left;
+}
+
+/* 
+ * pseudo-classes 
+ */
+
+/* 
+ * first, last, nth child 
+ */
+
+/* tr:first-child {
+  background-color: lightblue;
+} */
+
+/* tr:last-child {
+  background-color: lightgreen;
+} */
+
+/* tr:nth-child(2) {
+  background-color: yellow;
+} */
+
+/* tr:nth-child(odd) {
+  background-color: plum;
+} */
+
+/* 
+ * first, last, nth of type 
+ */
+
+/* td:first-of-type {
+  background-color: gold;
+} */
+
+/* td:last-of-type {
+  background-color: blueviolet;
+} */
+
+/* td:nth-of-type(odd) {
+  background-color: lightgreen;
+} */
+
+/* 
+ * not
+ */
+
+tr:not(tbody tr) {
+  background-color: lightgreen;
+}
