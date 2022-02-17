@@ -91,3 +91,24 @@ th {
 /* tr:not(:not(#jane)) {
   background-color: lightgreen;
 } */
+
+/* 
+ * ::before, ::after
+ */
+
+/* th::before {
+  content: '▸';
+  margin-right: 1rem;
+} */
+
+/* td:last-child::after {
+  content: '✓';
+  margin-left: 1rem;
+} */
+
+/* td:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ */
