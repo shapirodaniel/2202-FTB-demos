@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* SELECTORS */
+
+/* element */
+section {
+  border: 4px solid green;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  line-height: 1.5rem;
+}
+
+/* class */
+.first-section {
+  font-weight: bold;
+}
+
+/* id */
+#second-span {
+  font-size: 30px;
+  color: red;
+}
+
+/* class and id */
+#p1.paragraph {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* descendants */
+.paragraph span {
+  background-color: yellow;
+}
+
+/* direct child */
+section > p {
+  background-color: lightblue;
+}
+
+/* hover */
+p:hover {
+  transform: rotateY(180deg);
+}
