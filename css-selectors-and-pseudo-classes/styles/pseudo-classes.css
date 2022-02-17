@@ -19,13 +19,20 @@ body {
 /* table */
 
 table {
-  /* border-collapse: collapse; */
+  border-collapse: collapse;
 }
 
 th,
 td {
   padding: 1rem;
   border: 1px solid black;
+}
+
+@media print {
+  th,
+  td {
+    padding: 0;
+  }
 }
 
 th {
@@ -68,12 +75,13 @@ th {
   background-color: blueviolet;
 } */
 
-/* td:nth-of-type(odd) {
+/* td:nth-of-type(even) {
   background-color: lightgreen;
 } */
 
 /* 
- * not
+ * not -> we write :not(), inside the parentheses we place
+ * an ADDITIONAL CSS selector, something like ele.class-name > p
  */
 
 /* tr:not(tbody tr) {
@@ -84,10 +92,6 @@ th {
   background-color: lightpink;
 } */
 
-/* tr:not(#jane) {
-  background-color: yellow;
-} */
-
 /* tr:not(:not(#jane)) {
   background-color: lightgreen;
 } */
@@ -96,19 +100,18 @@ th {
  * ::before, ::after
  */
 
-/* th::before {
+th::before {
   content: '▸';
   margin-right: 1rem;
-} */
+}
 
-/* td:last-child::after {
+td:last-child::after {
   content: '✓';
   margin-left: 1rem;
-} */
+}
 
-/* td:last-child {
+td:last-child {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
- */
