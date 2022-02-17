@@ -76,6 +76,18 @@ th {
  * not
  */
 
-tr:not(tbody tr) {
+/* tr:not(tbody tr) {
   background-color: lightgreen;
-}
+} */
+
+/* .salary:not(.director .salary) {
+  background-color: lightpink;
+} */
+
+/* tr:not(#jane) {
+  background-color: yellow;
+} */
+
+/* tr:not(:not(#jane)) {
+  background-color: lightgreen;
+} */
