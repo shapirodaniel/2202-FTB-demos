@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+
+  /* default content alignment will be space-around */
+
+  /* flex-start: stack all rows at the start of the vertical axis */
+  /* align-content: flex-start; */
+
+  /* center: stack rows centered */
+  /* align-content: center; */
+
+  /* flex-end: stack rows at bottom of vertical axis */
+  /* align-content: flex-end; */
+
+  /* space-between: place at opposite ends of vertical axis */
+  /* align-content: space-between; */
+
+  /* space-around: default content alignment */
+  /* align-content: space-around; */
+
+  /* space-evenly: even spacing between elements and outer whitespace */
+  /* align-content: space-evenly; */
+}
+
+div {
+  flex: 1 0 25%;
+  background-color: lightblue;
+  margin: 1rem;
+  padding: 1rem;
+}
