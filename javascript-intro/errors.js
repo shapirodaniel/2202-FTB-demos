@@ -7,7 +7,7 @@
 
 /* read stack trace by "catching" error */
 // const FgRed = '\x1b[31m';
-// let stackTrace;
+// let stackTrace; // this is undefined
 
 // try {
 //   console.log(myValue);

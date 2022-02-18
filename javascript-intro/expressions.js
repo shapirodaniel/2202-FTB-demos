@@ -5,7 +5,7 @@ const myObjectLiteral = {};
 
 const myBooleanLiteral = true; // or false
 
-const myFloatLiteral = -123.45; // base 10
+const myFloatLiteral = -123.019287309871023987401892370498172345; // base 10
 
 const myOctalLiteral = 0071; // base 8, converts to 57 in base 10
 

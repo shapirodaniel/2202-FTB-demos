@@ -4,7 +4,7 @@ const isFalse = false;
 
 // object
 const dog = {
-  name: lily,
+  name: 'lily',
   age: 7,
   favoriteToys: ['kong', 'reindeer', 'cheesy-bone'],
 };
@@ -34,7 +34,7 @@ console.log(myNum); // 12
 
 // division
 myNum = myNum / 2; /* equivalent to: myNum /= 2 */
-console.log(myNum);
+console.log(myNum); // 6
 
 // Not-A-Number (NaN): it's a number, but it's not...
 const myNaN = NaN;
@@ -57,6 +57,8 @@ const myString = 'hello world!';
 
 // string with backticks: allows string interpolation, retains formatting
 const myInterpolatedString = `Hi, my name is ${dog.name} and I'm ${dog.age} years old!`;
+
+console.log(myInterpolatedString);
 
 const myMultilineString = `
   <div>
