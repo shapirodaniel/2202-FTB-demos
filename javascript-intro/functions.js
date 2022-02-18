@@ -46,9 +46,14 @@ function logAddNumbers(fn, numOne, numTwo) {
 logAddNumbers(addNumbers, 100, 25);
 
 // functions can optionally be stored to variables regardless of whether they're named or not
-const pizza = function () {
-  console.log('pizza!');
-};
+function hamburgers() {
+  console.log('hamburgers fn stored to pizza variable!');
+}
+
+const pizza = hamburgers;
+
+console.log(pizza());
+console.log(hamburgers());
 
 // functions can be declared with special "fat arrow" syntax
 // they're assigned like the above, but they omit the function keyword
