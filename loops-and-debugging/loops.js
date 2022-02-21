@@ -1,4 +1,32 @@
 // for loops
+
+/* 
+  simple for loops consist of three arguments
+  
+  - the iterator (usually i, j, k etc)
+  - the "stop-when" expression, usually to the .length of an iterable
+  - the "tick" expression, usually by +/- 1
+
+  the iterator should be declared with a let variable
+  this will scope the iterator to the loop block (more on this later)
+  
+  - ex, for (let i = <startValue>; ...)
+
+  the "stop-when" expression is usually the length of the iterable,
+  or a fixed value
+
+  - ex, const myArray = [1,2,3]; 
+  -     for (let i = 0; i < myArray.length; i++){ ... do something  }
+  - ex, for (let i = 10; i >= 0; i--){ ... do something }
+
+  the tick expression usually leverages either the increment or decrement operators
+  
+  - increment: ++, eg let myVar = 1; myVar++; console.log(myVar) // yields 2
+  - decrement: --, eg myVar--; console.log(myVar) // yields 1
+  - ++ is the same as thing += 1
+  - -- is the same as thing -= 1
+*/
+
 const iterateArrayForward = (array) => {
   console.log('iterateArrayForward');
   for (let i = 0; i < array.length; i++) {
