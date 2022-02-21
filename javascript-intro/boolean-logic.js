@@ -16,7 +16,7 @@ if (isArray(lunchOptions) && includesPizza(lunchOptions)) {
   console.log('lunch options are an array that includes pizza!');
 }
 
-const malformedLunchOptions = { pizza: true, hamburgers: true };
+const malformedLunchOptions = [{ pizza: true }, { hamburgers: true }];
 
 if (!isArray(malformedLunchOptions) || !includesPizza(malformedLunchOptions)) {
   /* this block only runs if either/both is/are false! */

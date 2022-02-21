@@ -18,14 +18,14 @@ if (!determinant) {
 // multiple if-else can be chained
 const valueOne = false;
 const valueTwo = 7;
-const valueThree = [];
-const valueFour = '';
+const valueThree = []; // array literal is an array
+const valueFour = ''; // inherently false according to the rules of ECMAScript
 
 if (valueOne) {
   console.log('inside first if-path');
 } else if (valueFour) {
   console.log('inside second if-path');
-} else if (!Array.isArray(valueThree)) {
+} else if (Array.isArray(valueThree)) {
   console.log('inside third if-path');
 } else {
   console.log(`reached valueTwo: ${valueTwo}`);
@@ -39,9 +39,9 @@ const dog = {
 };
 
 switch (true) {
-  case dog.name === 'lily':
+  case dog.name === 'lily': // this evaluated to true and matched our switch condition params block expression, which was itself true :)
     console.log('dog name match detected!');
-    break;
+    break; // leave this context, meaning, jump out of this branch, which is the entire switch block
   case dog.name === 'spartacus':
     console.log('dog name match detected!');
     break;

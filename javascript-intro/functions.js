@@ -32,7 +32,7 @@ function innerFunc() {
 function logAddNumbers(fn, numOne, numTwo) {
   console.log(`calling ${fn.name}!`);
 
-  const sum = fn(numOne, numTwo);
+  const sum = fn(numOne, numTwo); // addNumber IFF we supplied it in the function invocation / call
 
   console.log(`sum is ${sum}`);
 
@@ -63,4 +63,4 @@ const fatArrowFn = (string) => {
   return string.split(''); // converts string to array of characters
 };
 
-console.log(fatArrowFn('hello world!'));
+console.log(fatArrowFn('hello world!').join(''));
