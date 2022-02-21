@@ -29,7 +29,8 @@
 
 const iterateArrayForward = (array) => {
   console.log('iterateArrayForward');
-  for (let i = 0; i < array.length; i++) {
+  let i = 0;
+  for (; i < array.length; i++) {
     console.log(array[i]);
   }
 };
@@ -48,6 +49,10 @@ const iterateArrayWithSkips = (array) => {
   }
 };
 
+// since arrays are indexed from 0
+// the FIRST POSITION in an array is found at array[0]
+// the rest of the positions are:
+//               0  1  2  3  4  5 << this is at the length of the array, and there's nothing here! so if i call array[5], i'll get undefined back
 const myArray = [1, 2, 3, 4, 5];
 
 iterateArrayForward(myArray);
@@ -77,7 +82,7 @@ function liftoff(num) {
     }
 
     console.log('...liftoff!');
-    break; // end loop
+    // break; // end loop
   }
 }
 
@@ -116,3 +121,4 @@ function sarcastify(string) {
 }
 
 console.log(sarcastify('this spongebob meme never gets old!'));
+console.log(sarcastify('i looooooove for loops!'));
