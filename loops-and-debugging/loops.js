@@ -82,7 +82,7 @@ function liftoff(num) {
     }
 
     console.log('...liftoff!');
-    // break; // end loop
+    break; // end loop
   }
 }
 
