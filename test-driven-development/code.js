@@ -11,17 +11,16 @@ function addTwoNumbers(x, y) {
   return x + y;
 }
 
+// ...args is an array
+// (...) is "spread syntax", and can be used on any iterable
 function addUnknownNumberOfArgs(...args) {
   let total = 0;
-
   for (const arg of args) {
     if (isNaN(+arg)) {
       throw new Error('value is not a number!');
     }
-
     total += arg;
   }
-
   return total;
 }
 
