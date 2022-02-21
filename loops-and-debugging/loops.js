@@ -71,3 +71,20 @@ for (const key in dog) {
 for (const element of myArray) {
   console.log(`element of myArray is: ${element}`);
 }
+
+// loop over string
+function sarcastify(string) {
+  let sarcasticString = '';
+
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 === 0) {
+      sarcasticString += string[i];
+    } else {
+      sarcasticString += string[i].toUpperCase();
+    }
+  }
+
+  return sarcasticString;
+}
+
+console.log(sarcastify('this spongebob meme never gets old!'));
