@@ -74,3 +74,7 @@ console.log('hello world!'.length); // 12
 'this sentence will look WEIRD without its vowels'.replace(/a|e|i|o|u/, '');
 'this sentence will look WEIRD without its vowels'.replace(/a|e|i|o|u/g, '');
 'this sentence will look WEIRD without its vowels'.replace(/a|e|i|o|u/gi, '');
+
+// substring grabs a subset of chars
+// same behavior as slice with both params (end index is EXCLUSIVE)
+'spongebob squarepants'.substring(6, 16); // 'bob square'
