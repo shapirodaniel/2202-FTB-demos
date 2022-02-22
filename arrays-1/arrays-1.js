@@ -1,9 +1,19 @@
 // javascript arrays are objects with special properties / characteristics
-// they're resizable
-// they can contain a mix of different data types
-// they are not associative arrays: array elements can ONLY be accessed using integers as indices
-// they are zero-indexed: first element at 0, last element at array.length - 1
-// array copy methods create shallow copies -- arrays are passed by REFERENCE, not by VALUE
+
+/* 
+  1. they're resizable
+
+  2. they can contain a mix of different data types
+  
+  3. they are not associative arrays: 
+     array elements can ONLY be accessed using integers as indices
+  
+  4. they are zero-indexed: 
+     first element at 0, last element at array.length - 1
+
+  5. important! array copy methods create shallow copies:
+     arrays are passed by REFERENCE, not by VALUE 
+*/
 
 const myArray = [
   1,
@@ -37,7 +47,7 @@ console.log(newArray); // [null, null, (etc) ...]
 
 // .flat(), levels nested array
 const nestedArray = [
-  [1, 2],
+  [1, [2]],
   [3, 4],
 ];
 nestedArray.flat(); // yields [1,2,3,4]
@@ -101,12 +111,14 @@ docBody.appendChild(myDocument.createElement('div'));
 docBody.appendChild(myDocument.createElement('div'));
 
 const myDivs = myDocument.querySelectorAll('div');
-// Array.from()
+
+// Array.from(), converts a generic collection to an Array type
 const myArrayFromDivs = Array.from(myDivs);
 
 console.log(myDivs); // NodeList
 console.log(myArrayFromDivs); // (no type specified)
 
+// Array.isArray(obj) returns boolean if obj prototype is Array
 console.log(Array.isArray(myDivs)); // false
 console.log(Array.isArray(myArrayFromDivs)); // true
 
