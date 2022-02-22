@@ -19,6 +19,8 @@ console.log('add number to string: ', sum); // yields 64
 sum = value2 + value1;
 console.log('add string to number: ', sum); // yields 46
 
+// unary operator ( + )
+// Number(value) and +value both EXPLICITLY coerce a value to a number
 sum = +value1 + value2;
 console.log('sum values with unary operator conversion: ', sum); // yields 10
 
@@ -65,8 +67,20 @@ const listItems = (array) => {
     array.forEach((item) => {
       console.log(`${item.name} is ${item.age} years old with id ${item.id}`);
     });
-    return;
+    return; // function execution ENDS WITH A RETURN
+    // so only code that DOESN'T enter the if block will throw an error
+    // otherwise, we do the if-block work, and we immediately exit our program
   }
   // otherwise, we throw an error
   throw new Error('no items in array!');
 };
+
+// using Boolean() constructor to generate a boolean from a truthy/falsy value
+const myTruthyValue = 0 + 100 / Math.PI;
+const myFalsyValue = NaN;
+Boolean(myTruthyValue); // true
+Boolean(myFalsyValue); // false
+
+// using double negation or double bang (!!)
+console.log(typeof myTruthyValue); // logs true
+console.log(typeof myFalsyValue); // logs false
