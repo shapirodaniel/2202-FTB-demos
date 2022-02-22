@@ -28,6 +28,7 @@ console.log(typeof String(7)); // 'string'
 // startsWith, endsWith (with optional index)
 
 // startsWith opt index to start searching from
+// comparing characters linked with logical AND &&
 'hello world!'.startsWith('hello'); // true
 'hello world!'.startsWith('hello', 1); // false
 
@@ -73,7 +74,10 @@ console.log('hello world!'.length); // 12
 // without a regex case-insensitive flag (i), only exact case matches will be replaced
 'this sentence will look WEIRD without its vowels'.replace(/a|e|i|o|u/, '');
 'this sentence will look WEIRD without its vowels'.replace(/a|e|i|o|u/g, '');
-'this sentence will look WEIRD without its vowels'.replace(/a|e|i|o|u/gi, '');
+'this sentence will look WEIRD without its vowels'.replace(
+  /a|e|i|o|u/gi,
+  'pizza'
+);
 
 // substring grabs a subset of chars
 // same behavior as slice with both params (end index is EXCLUSIVE)
