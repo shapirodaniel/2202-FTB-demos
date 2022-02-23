@@ -38,6 +38,9 @@ if (emptyListFromInterwebs.length) {
 // let's say that we only want to perform a calculation on a number
 // so we'd like to make sure that any value we're coercing
 // from number to string or vice versa doesn't yield a NaN
+// we'll have to leverage the isNaN function
+// since coercing '0' to a number will yield a falsy value
+// even though it's a valid number!
 if (isNaN(+'pizza')) {
   console.log('that value was not a number! try again :)');
 } else {
