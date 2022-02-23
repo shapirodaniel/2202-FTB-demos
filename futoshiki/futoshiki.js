@@ -15,6 +15,14 @@ const validFutoshikiBoard = [
   [4, 5, 1, 2, 3],
 ];
 
+const invalidFutoshikiBoard = [
+  [1, 2, 3, 4, 5],
+  [1, 3, 2, 5, 4],
+  [2, 4, 5, 3, 1],
+  [5, 3, 4, 1, 2],
+  [4, 5, 1, 2, 3],
+];
+
 const futoshikiRowRelations = [null, [0, 'gt'], [4, 'lt'], [4, 'lt']];
 
 const futoshikiColumnRelations = [
@@ -105,7 +113,6 @@ const validateNumbers = (rowOrColumn) => {
 // validateRowRelations will take four parameters:
 // the rows, the colIndex, and the relation: 'gt' | 'lt' (single pipe | means "or" in this context)
 const validateEqualities = (rowOrColumn1, rowOrColumn2, index, relation) => {
-  console.log(rowOrColumn1, rowOrColumn2, index, relation);
   if (relation === 'gt') {
     // JS expressions that compare values return a boolean
     // so we'll return the comparison values directly
@@ -189,4 +196,11 @@ const validateFutoshiki = (board) => {
   return true;
 };
 
-console.log(validateFutoshiki(validFutoshikiBoard));
+console.log(
+  'validFutoshikiBoard is valid? ',
+  validateFutoshiki(validFutoshikiBoard)
+);
+console.log(
+  'invalidFutoshikiBoard is valid? ',
+  validateFutoshiki(invalidFutoshikiBoard)
+);
