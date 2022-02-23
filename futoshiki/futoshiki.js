@@ -27,7 +27,7 @@ const futoshikiColumnRelations = [
 /* 
 how to interpret relation matrices:
 
-- relations looki "down" to next row
+- relations look "down" to next row
   eg, current col of current row relates to next col of next row
 
 - null indicates no relation between current, next row
