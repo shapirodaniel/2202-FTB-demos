@@ -1,15 +1,10 @@
 /* 
+let's build a futoshiki validator!
 
-let's build a futoshiki validator
-
-rules of futoshiki
-
-place the numbers 1 to 5 in each row and column
-
-no row or column can hold a repeated number
-
-inequalities may be stated on row:row relations and/or column:column relations
-
+rules of futoshiki are: 
+- place the numbers 1 to 5 in each row and column
+- no row or column can hold a repeated number
+- inequalities may be stated on row:row relations and/or column:column relations
 */
 
 const validFutoshikiBoard = [
@@ -20,41 +15,7 @@ const validFutoshikiBoard = [
   [4, 5, 1, 2, 3],
 ];
 
-/* 
-
-looking "down" to next row, where current col of current row relates to next col of next row
-
-null indicates no relation between current, next row
-
-otherwise, [colIndex, type], where colIndex is a position in the row array
-
-where type is "gt" (>) or "lt" (<) 
-
-for example, the first row relation below is at index 1: [0, 'gt']
-
-0 refers to the zeroth position of the second and third arrays of validFutoshikiBoard
-
-so we're asserting that 3 'gt' 2, or 3 > 2
-
-*/
-
 const futoshikiRowRelations = [null, [0, 'gt'], [4, 'lt'], [4, 'lt']];
-
-/* 
-
-same as above logic, except these indices refer to an index within a derived column
-
-for example, column 1 is the zeroth position of each row, derived as a separate array
-
-ex, in the validFutoshikiBoard above, the "first" column is
-
-0: [1, 3, 2, 5, 4], the second is 1: [2, 1, 4, 3, 5]
-
-so the first column relation below is between the last index of both derived arrays
-
-ie, 4 "lt" 5, or 4 < 5 
-
-*/
 
 const futoshikiColumnRelations = [
   [4, 'lt'],
@@ -64,13 +25,39 @@ const futoshikiColumnRelations = [
 ];
 
 /* 
-  
-  our goal is to create a function validateFutoshiki(board)
-  that accepts a matrix, or 1 x n array (of arrays of length n)
-  and returns a boolean that lets us know if the solution is valid or not
+how to interpret relation matrices:
 
-  validateFutoshiki(validFutoshikiBoard) should yield true
+- relations looki "down" to next row
+  eg, current col of current row relates to next col of next row
 
+- null indicates no relation between current, next row
+
+- each sub-array is structured [colIndex, type], 
+  colIndex is a position in the row array
+  type is "gt" (>) or "lt" (<) 
+
+ROWS:
+for example, the first row relation of futoshikiRowRelations is at index 1: [0, 'gt']
+0 refers to the zeroth position of the second and third arrays of validFutoshikiBoard
+so we're asserting that 3 'gt' 2, or 3 > 2
+
+COLUMNS:
+for example, column 1 is the zeroth position of each row derived as a separate array
+
+in the validFutoshikiBoard above, the "first" column is:
+0: [1, 3, 2, 5, 4], the second is 1: [2, 1, 4, 3, 5]
+
+so the first column relation below is between the last index of both derived arrays
+so we're asserting that 4 'lt' 5, or 4 < 5 
+*/
+
+/* 
+  GOAL:
+  create a function validateFutoshiki(board) 
+  it should receive a matrix, or 1 x n array (of arrays of length n)
+  and return a boolean that lets us know if the solution is valid or not
+
+  for example, validateFutoshiki(validFutoshikiBoard) should yield true
 */
 
 // how to approach a big problem?
