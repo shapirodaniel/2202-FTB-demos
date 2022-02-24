@@ -42,6 +42,10 @@ const toppings = {
   },
 };
 
+// this function is NOT a method :)
+// BUT, we can force it to behave exactly like a method
+// if we BIND it to a particular object
+// at which point, the this value will "point" to the bound object
 function calculateInventoryValue() {
   let totalValue = 0;
 

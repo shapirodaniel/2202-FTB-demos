@@ -1,11 +1,15 @@
 // defining an object method
 // assigning a function to an object key
 
+// not a method :)
+function carFn() {}
+
 const car = {
   make: 'toyota',
   model: 'camry',
   year: '2017',
   price: 13000,
+  // is a method :)
   start: function () {
     console.log('vrooooom im a car');
   },
