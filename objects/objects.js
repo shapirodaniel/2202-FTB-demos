@@ -126,7 +126,7 @@ function getFavoritesByInterest(interest) {
   // the type of an expression that COULD be undefined
   // if we supply an interest that isn't found in our "user" object
   // we need to guard against a TypeError thrown by Object.keys()
-  const keys = Object.keys(user.interests[interest] /* || {} */);
+  const keys = Object.keys(user.interests[interest] || {});
 
   for (let i = 0; i < keys.length; i++) {
     const currentKey = keys[i];
