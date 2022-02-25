@@ -57,15 +57,15 @@ function buildDogList() {
     'https://images.dog.ceo/breeds/coonhound/n02089078_502.jpg',
   ];
 
-  for (const dog of dogs) {
-    addDog(dog);
+  for (const dogUrl of dogs) {
+    addDog(dogUrl);
   }
 }
 
 ////////////////
 /* MODIFY DOM */
 ////////////////
-buildDogList();
+buildDogList(); // this is the "call site" of the buildDogList function
 
 // .addEventListener() takes two arguments (optionally 3, but we'll ignore the third parameter for now...)
 // a string that refers to an event type, like 'click', 'mouseover', 'DOMContentLoaded', etc.
