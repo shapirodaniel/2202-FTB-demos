@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+}
+
+#dog-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+#dog-list img {
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+
+#dog-list img:hover {
+  border: 3px solid white;
+}
+
+#dog-list img.selected {
+  filter: none;
+}
