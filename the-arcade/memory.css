@@ -19,6 +19,10 @@ body {
 }
 
 body > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 1rem;
 }
@@ -33,4 +37,25 @@ h1 {
   align-items: center;
   justify-content: space-between;
   height: 4rem;
+}
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+}
+
+#board img {
+  width: 90px;
+  height: 90px;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.hidden-image {
+  border: 1px solid black;
+  opacity: 0.3;
 }

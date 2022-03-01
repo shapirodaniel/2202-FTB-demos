@@ -1,7 +1,5 @@
 // source.unsplash.com/random/200x200?fun
-// each image will be paired randomly in a game board
-// game objective: match cards
-// if you miss, cards are turned over and play goes to next person
+// each image will be placed twice randomly in a game board
 const images = [
   {
     id: 1,
@@ -45,7 +43,9 @@ const images = [
   },
 ];
 
-function createEmptyBoard (images) {
+const questionMarkImage = './assets/question-mark.png';
+
+function createEmptyBoard(images) {
   const board = [];
   const len = images.length / 2;
 
@@ -54,7 +54,7 @@ function createEmptyBoard (images) {
   }
 
   return board;
-};
+}
 
 function initializeBoard(images) {
   const board = createEmptyBoard(images);
@@ -67,7 +67,7 @@ function initializeBoard(images) {
       // reselect if id has been used twice
       // this guarantees we select each image only and exactly twice
       while (ids[randomId] === 2) {
-        console.log('reselecting');
+        // console.log('reselecting');
         randomId = Math.ceil(Math.random() * images.length);
       }
 
@@ -79,32 +79,98 @@ function initializeBoard(images) {
       // otherwise, id is not defined on ids object yet
       // initialize it with a value of 1
       if (ids[randomId]) {
-        console.log('id already used once');
+        // console.log('id already used once');
         ids[randomId]++;
       } else {
-        console.log('id has not been used yet');
+        // console.log('id has not been used yet');
         ids[randomId] = 1;
       }
     }
   }
 
   return board;
-};
-
-function handleSelection (state, id) {
-  if (state.selections[0]) {
-    if (state.selections[0] === id) {
-      visiblePairs[id] = true;
-    }
-  }
-};
+}
 
 const initialState = {
   board: initializeBoard(images),
   visiblePairs: {},
-  selections: [],
+  exposedCards: [],
 };
 
 const state = { ...initialState };
 
-function renderState()
+function buildDOMBoard() {
+  const DOMBoard = document.getElementById('board');
+  const { board } = state;
+  let nodeId = 1;
+
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[0].length; j++) {
+      const imgId = board[i][j];
+      const img = document.createElement('img');
+
+      img.id = `img:${nodeId}`;
+      img.src = './assets/question-mark.png';
+      img.dataset.imgId = imgId;
+
+      DOMBoard.appendChild(img);
+
+      nodeId++;
+    }
+  }
+}
+
+buildDOMBoard();
+
+function handleMove(node) {
+  console.log(node);
+  // object destructuring
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+  const { exposedCards, visiblePairs } = state;
+
+  // case: exposedCards array is empty
+  if (!exposedCards.length) {
+    exposedCards.push(node.cloneNode(true));
+    return;
+  }
+
+  // case: exposedCards array is not empty
+  if (exposedCards[0].dataset.imgId === node.dataset.imgId) {
+    // if imgIds match, add to visiblePairs
+    visiblePairs[node.dataset.imgId] = true;
+  }
+
+  exposedCards.pop();
+}
+
+document.getElementById('board').addEventListener('click', (e) => {
+  if (!e.target.tagName === 'IMG' || e.target.dataset.visible) return;
+
+  handleMove(e.target);
+  renderState();
+});
+
+function renderState() {
+  const { visiblePairs, exposedCards } = state;
+  const boardSquares = Array.from(document.querySelectorAll('#board img'));
+
+  for (let i = 0; i < boardSquares.length; i++) {
+    // select url by visiblePairs and exposedCards
+    // if node is equal to exposedCards via isEqualNode
+    // else if node.dataset.imgId in visiblePairs
+    // src = image url
+    // else src = question mark url
+    const currentSquare = boardSquares[i];
+
+    if (
+      (exposedCards[0] && exposedCards[0].id === currentSquare.id) ||
+      visiblePairs[currentSquare.dataset.imgId]
+    ) {
+      currentSquare.src = images.find(
+        (image) => image.id === +currentSquare.dataset.imgId
+      ).url;
+    } else {
+      currentSquare.src = questionMarkImage;
+    }
+  }
+}
