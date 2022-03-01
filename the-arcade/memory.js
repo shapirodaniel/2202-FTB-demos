@@ -1,3 +1,7 @@
+//////////
+/* DATA */
+//////////
+
 // source.unsplash.com/random/200x200?fun
 // each image will be placed twice randomly in a game board
 const images = [
@@ -45,6 +49,10 @@ const images = [
 
 const questionMarkImage = './assets/question-mark.png';
 
+/////////////////
+/* BOARD SETUP */
+/////////////////
+
 function createEmptyBoard(images) {
   const board = [];
   const len = images.length / 2;
@@ -71,13 +79,6 @@ function initializeBoard(images) {
         randomId = Math.ceil(Math.random() * images.length);
       }
 
-      board[i][j] = randomId;
-
-      // track id usage on ids object
-      // if id has been used, it will be registered with a value of 1
-      // increment it
-      // otherwise, id is not defined on ids object yet
-      // initialize it with a value of 1
       if (ids[randomId]) {
         // console.log('id already used once');
         ids[randomId]++;
@@ -85,12 +86,21 @@ function initializeBoard(images) {
         // console.log('id has not been used yet');
         ids[randomId] = 1;
       }
+
+      board[i][j] = randomId;
     }
   }
 
   return board;
 }
 
+///////////
+/* STATE */
+///////////
+
+// by separating initialState and state
+// we can reinitialize a game for "play again" functionality
+// by replacing state with a fresh copy of initialState
 const initialState = {
   board: initializeBoard(images),
   visiblePairs: {},
@@ -99,6 +109,10 @@ const initialState = {
 };
 
 const state = { ...initialState };
+
+//////////////////////
+/* BUILD GAME BOARD */
+//////////////////////
 
 function buildDOMBoard() {
   const DOMBoard = document.getElementById('board');
@@ -122,6 +136,10 @@ function buildDOMBoard() {
 }
 
 buildDOMBoard();
+
+////////////////////
+/* GAME MECHANICS */
+////////////////////
 
 function handleMove(node) {
   // object destructuring

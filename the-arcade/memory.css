@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Open+Sans&family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +10,9 @@ html {
   margin: 0;
   width: 100vw;
   height: auto;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -32,13 +38,6 @@ h1 {
   text-align: center;
 }
 
-#user-registration {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 4rem;
-}
-
 #board {
   display: flex;
   flex-wrap: wrap;
@@ -57,9 +56,4 @@ h1 {
 
 #board img:hover {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.hidden-image {
-  border: 1px solid black;
-  opacity: 0.3;
 }
