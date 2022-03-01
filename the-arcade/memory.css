@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: auto;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+}
+
+body > * {
+  width: 100%;
+  padding: 1rem;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
+#user-registration {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
