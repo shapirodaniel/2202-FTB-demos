@@ -95,6 +95,7 @@ const initialState = {
   board: initializeBoard(images),
   visiblePairs: {},
   exposedCards: [],
+  winner: null,
 };
 
 const state = { ...initialState };
@@ -130,6 +131,7 @@ function handleMove(node) {
 
   // case: exposedCards array is empty
   if (!exposedCards.length) {
+    node.dataset.visible = true;
     exposedCards.push(node.cloneNode(true));
     return;
   }
@@ -140,11 +142,14 @@ function handleMove(node) {
     visiblePairs[node.dataset.imgId] = true;
   }
 
-  exposedCards.pop();
+  // set visibility data of both cards
+  const exposedCard = exposedCards.pop();
+  node.dataset.visible = false;
+  exposedCard.dataset.visible = false;
 }
 
 document.getElementById('board').addEventListener('click', (e) => {
-  if (!e.target.tagName === 'IMG' || e.target.dataset.visible) return;
+  if (!e.target.tagName === 'IMG') return;
 
   handleMove(e.target);
   renderState();
@@ -155,20 +160,19 @@ function renderState() {
   const boardSquares = Array.from(document.querySelectorAll('#board img'));
 
   for (let i = 0; i < boardSquares.length; i++) {
-    // select url by visiblePairs and exposedCards
-    // if node is equal to exposedCards via isEqualNode
-    // else if node.dataset.imgId in visiblePairs
-    // src = image url
-    // else src = question mark url
     const currentSquare = boardSquares[i];
 
-    if (
-      (exposedCards[0] && exposedCards[0].id === currentSquare.id) ||
-      visiblePairs[currentSquare.dataset.imgId]
-    ) {
-      currentSquare.src = images.find(
-        (image) => image.id === +currentSquare.dataset.imgId
-      ).url;
+    const cardIsAlreadyExposed =
+      exposedCards[0] && exposedCards[0].id === currentSquare.id;
+
+    const cardBelongsToVisiblePairs = visiblePairs[currentSquare.dataset.imgId];
+
+    function getImgUrl(card) {
+      return images.find((image) => image.id === +card.dataset.imgId).url;
+    }
+
+    if (cardIsAlreadyExposed || cardBelongsToVisiblePairs) {
+      currentSquare.src = getImgUrl(currentSquare);
     } else {
       currentSquare.src = questionMarkImage;
     }
