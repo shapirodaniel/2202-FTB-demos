@@ -124,7 +124,6 @@ function buildDOMBoard() {
 buildDOMBoard();
 
 function handleMove(node) {
-  console.log(node);
   // object destructuring
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
   const { exposedCards, visiblePairs } = state;
@@ -133,6 +132,13 @@ function handleMove(node) {
   if (!exposedCards.length) {
     node.dataset.visible = true;
     exposedCards.push(node.cloneNode(true));
+    return;
+  }
+
+  // case: exposedCards array is not empty
+  // AND exposed card id matches node id
+  // no-op, do nothing
+  if (exposedCards[0].id === node.id) {
     return;
   }
 
@@ -178,3 +184,7 @@ function renderState() {
     }
   }
 }
+
+// live-server injected its markup and it's being rendered into page
+// this masks that script injection
+document.body.querySelector('script').style.display = 'none';
