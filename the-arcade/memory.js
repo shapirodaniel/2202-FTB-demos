@@ -146,9 +146,6 @@ buildDOMBoard();
 ////////////////////
 
 function handleMove(node) {
-  // increment guess counter
-  state.numGuesses++;
-
   // object destructuring
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
   const { exposedCards, visiblePairs } = state;
@@ -157,6 +154,7 @@ function handleMove(node) {
   if (!exposedCards.length) {
     node.dataset.visible = true;
     exposedCards.push(node.cloneNode(true));
+    state.numGuesses++;
     return;
   }
 
@@ -177,6 +175,7 @@ function handleMove(node) {
   const exposedCard = exposedCards.pop();
   node.dataset.visible = false;
   exposedCard.dataset.visible = false;
+  state.numGuesses++;
 }
 
 function renderState() {
@@ -230,7 +229,7 @@ function checkWin(isSimulated) {
 }
 
 document.getElementById('board').addEventListener('click', (e) => {
-  if (!e.target.tagName === 'IMG') return;
+  if (e.target.tagName !== 'IMG') return;
 
   handleMove(e.target);
   renderState();
