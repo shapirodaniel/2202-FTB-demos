@@ -77,7 +77,7 @@ h1 {
   justify-content: center;
 }
 
-#modal-content {
+aside {
   display: none;
   position: absolute;
   top: 10%;
@@ -86,13 +86,14 @@ h1 {
   bottom: 23%;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   background-color: black;
   max-height: 458px;
   max-width: 400px;
   min-height: 458px;
   min-width: 400px;
   margin: 0 auto;
+  color: white;
 }
 
 aside img {
@@ -100,14 +101,31 @@ aside img {
   height: auto;
 }
 
-aside div {
-  padding: 1rem;
-  font-size: 32px;
-  color: white;
+aside > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
-#total-guesses {
-  font-size: 18px;
+aside h2 {
+  margin: 0;
+}
+
+aside section {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+aside section :first-child {
+  margin-right: 1rem;
 }
 
 aside button {

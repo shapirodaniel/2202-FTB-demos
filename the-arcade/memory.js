@@ -228,6 +228,18 @@ document.getElementById('board').addEventListener('click', (e) => {
   checkWin();
 });
 
+///////////////////
+/* LOCAL STORAGE */
+///////////////////
+
+function updateMemoryBestTotalGuesses(newTotalGuesses) {
+  localStorage.setItem('memoryBestTotalGuesses', newTotalGuesses);
+}
+
+function getMemoryBestTotalGuesses() {
+  return localStorage.getItem('memoryBestTotalGuesses');
+}
+
 ///////////
 /* UTILS */
 ///////////
