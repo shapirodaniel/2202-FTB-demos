@@ -101,14 +101,18 @@ function initializeBoard(images) {
 // by separating initialState and state
 // we can reinitialize a game for "play again" functionality
 // by replacing state with a fresh copy of initialState
-const initialState = {
-  board: initializeBoard(images),
-  visiblePairs: {},
-  exposedCards: [],
-  winner: null,
-};
+function buildInitialState() {
+  const initialState = {
+    board: initializeBoard(images),
+    visiblePairs: {},
+    exposedCards: [],
+    numGuesses: 0,
+  };
 
-const state = { ...initialState };
+  return initialState;
+}
+
+let state = buildInitialState();
 
 //////////////////////
 /* BUILD GAME BOARD */
@@ -142,6 +146,9 @@ buildDOMBoard();
 ////////////////////
 
 function handleMove(node) {
+  // increment guess counter
+  state.numGuesses++;
+
   // object destructuring
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
   const { exposedCards, visiblePairs } = state;
@@ -177,10 +184,25 @@ document.getElementById('board').addEventListener('click', (e) => {
 
   handleMove(e.target);
   renderState();
+  checkWin();
 });
 
+function checkWin() {
+  // if all image.src are not the questionMark asset, player has won
+  const won = Array.from(document.querySelectorAll('#board img')).every(
+    (square) => square.src.indexOf(questionMarkImage.slice(1)) === -1
+  );
+
+  if (won) {
+    document.getElementById('play-again-modal').style.display = 'flex';
+    document.getElementById('modal-content').style.display = 'flex';
+    document.getElementById('total-guesses').querySelector('span').innerText =
+      state.numGuesses;
+  }
+}
+
 function renderState() {
-  const { visiblePairs, exposedCards } = state;
+  const { visiblePairs, exposedCards, numGuesses } = state;
   const boardSquares = Array.from(document.querySelectorAll('#board img'));
 
   for (let i = 0; i < boardSquares.length; i++) {
@@ -201,7 +223,40 @@ function renderState() {
       currentSquare.src = questionMarkImage;
     }
   }
+
+  document.getElementById('num-guesses').querySelector('span').innerText =
+    numGuesses;
 }
+
+///////////
+/* UTILS */
+///////////
+
+function resetGame() {
+  state = buildInitialState();
+
+  Array.from(document.querySelectorAll('#board img')).forEach((node) => {
+    delete node.dataset.visible;
+    node.src = questionMarkImage;
+  });
+
+  document.getElementById('num-guesses').querySelector('span').innerText = 0;
+  document.getElementById('play-again-modal').style.display = 'none';
+  document.getElementById('modal-content').style.display = 'none';
+}
+
+document.getElementById('reset-game').addEventListener('click', resetGame);
+
+function simulateWin() {
+  const boardSquares = Array.from(document.querySelectorAll('#board img'));
+  boardSquares.forEach(
+    (node) =>
+      (node.src = 'http://source.unsplash.com/random/200x200?nature,water')
+  );
+  checkWin();
+}
+
+document.getElementById('simulate-win').addEventListener('click', simulateWin);
 
 // live-server injected its markup and it's being rendered into page
 // this masks that script injection
