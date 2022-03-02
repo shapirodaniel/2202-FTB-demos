@@ -179,28 +179,6 @@ function handleMove(node) {
   exposedCard.dataset.visible = false;
 }
 
-document.getElementById('board').addEventListener('click', (e) => {
-  if (!e.target.tagName === 'IMG') return;
-
-  handleMove(e.target);
-  renderState();
-  checkWin();
-});
-
-function checkWin() {
-  // if all image.src are not the questionMark asset, player has won
-  const won = Array.from(document.querySelectorAll('#board img')).every(
-    (square) => square.src.indexOf(questionMarkImage.slice(1)) === -1
-  );
-
-  if (won) {
-    document.getElementById('play-again-modal').style.display = 'flex';
-    document.getElementById('modal-content').style.display = 'flex';
-    document.getElementById('total-guesses').querySelector('span').innerText =
-      state.numGuesses;
-  }
-}
-
 function renderState() {
   const { visiblePairs, exposedCards, numGuesses } = state;
   const boardSquares = Array.from(document.querySelectorAll('#board img'));
@@ -227,6 +205,28 @@ function renderState() {
   document.getElementById('num-guesses').querySelector('span').innerText =
     numGuesses;
 }
+
+function checkWin() {
+  // if all image.src are not the questionMark asset, player has won
+  const won = Array.from(document.querySelectorAll('#board img')).every(
+    (square) => square.src.indexOf(questionMarkImage.slice(1)) === -1
+  );
+
+  if (won) {
+    document.getElementById('play-again-modal').style.display = 'flex';
+    document.getElementById('modal-content').style.display = 'flex';
+    document.getElementById('total-guesses').querySelector('span').innerText =
+      state.numGuesses;
+  }
+}
+
+document.getElementById('board').addEventListener('click', (e) => {
+  if (!e.target.tagName === 'IMG') return;
+
+  handleMove(e.target);
+  renderState();
+  checkWin();
+});
 
 ///////////
 /* UTILS */
