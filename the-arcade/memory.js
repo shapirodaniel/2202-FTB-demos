@@ -206,14 +206,15 @@ function renderState() {
     numGuesses;
 }
 
-function checkWin() {
+// if isSimulated flag is true, skip updating best total guesses field
+function checkWin(isSimulated) {
   // if all image.src are not the questionMark asset, player has won
   const won = Array.from(document.querySelectorAll('#board img')).every(
     (square) => square.src.indexOf(questionMarkImage.slice(1)) === -1
   );
 
   if (won) {
-    if (getMemoryBestTotalGuesses() > state.numGuesses) {
+    if (!isSimulated && getMemoryBestTotalGuesses() > state.numGuesses) {
       updateMemoryBestTotalGuesses(state.numGuesses);
     }
 
@@ -279,7 +280,9 @@ function simulateWin() {
     (node) =>
       (node.src = 'http://source.unsplash.com/random/200x200?nature,water')
   );
-  checkWin();
+
+  // isSimulated flag set to true to skip localStorage memoryBestTotalGuesses update
+  checkWin(true);
 }
 
 document.getElementById('simulate-win').addEventListener('click', simulateWin);
