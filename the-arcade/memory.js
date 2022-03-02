@@ -213,10 +213,18 @@ function checkWin() {
   );
 
   if (won) {
+    if (getMemoryBestTotalGuesses() > state.numGuesses) {
+      updateMemoryBestTotalGuesses(state.numGuesses);
+    }
+
     document.getElementById('play-again-modal').style.display = 'flex';
     document.getElementById('modal-content').style.display = 'flex';
     document.getElementById('total-guesses').querySelector('span').innerText =
       state.numGuesses;
+
+    document
+      .getElementById('best-total-guesses')
+      .querySelector('span').innerText = getMemoryBestTotalGuesses();
   }
 }
 
@@ -232,12 +240,18 @@ document.getElementById('board').addEventListener('click', (e) => {
 /* LOCAL STORAGE */
 ///////////////////
 
+// initialize the memoryBestTotalGuesses field to an arbitrarily large number
+// first time user plays game, their numGuesses will overwrite
+if (!localStorage.getItem('memoryBestTotalGuesses')) {
+  localStorage.setItem('memoryBestTotalGuesses', 1000000);
+}
+
 function updateMemoryBestTotalGuesses(newTotalGuesses) {
   localStorage.setItem('memoryBestTotalGuesses', newTotalGuesses);
 }
 
 function getMemoryBestTotalGuesses() {
-  return localStorage.getItem('memoryBestTotalGuesses');
+  return Number(localStorage.getItem('memoryBestTotalGuesses'));
 }
 
 ///////////
