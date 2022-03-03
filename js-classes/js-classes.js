@@ -7,14 +7,14 @@
 
 // i'm going to bind this function by using the bind() method that comes on functions
 // we'll still see that this.name is undefined as this refers to the global object, since arrow functions don't retain their this context!
+// we can demonstrate the issue here by assigning a name property to the globalThis, which will log out whenever we try to use the arrow function
+this.name = 'globalThis FIRST TIME';
+
 const barkWithArrowFunctionBound = () => {
   console.log(
     `inside bound version of barkWithArrowFunction, ${this.name} says woof woof :)`
   );
 };
-
-// we can demonstrate the issue here by assigning a name property to the globalThis, which will log out whenever we try to use the arrow function
-globalThis.name = 'globalThis';
 
 class Dog {
   constructor(name, age) {
@@ -37,6 +37,8 @@ dogInstance.bark();
 // which happens to have been built with the Dog constructor
 // however, where you MIGHT think this will refer to the dog instance, it won't!
 // arrow functions have no this context, so they'll always default to the scope in which they were defined, ie the globalThis (node.js) or window object (in the browser)
+this.name = 'globalThis NAME CHANGE';
+
 dogInstance.barkWithArrowFunction = () => {
   console.log(`inside barkWitharrowFunction, ${this.name} says woof woof :)`);
 };
