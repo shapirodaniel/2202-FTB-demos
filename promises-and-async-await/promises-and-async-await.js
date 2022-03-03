@@ -14,6 +14,7 @@ const longRunningOperation = (len, isTimed) => {
 
   let randString = getRandomDigitsString(len);
 
+  // any particular random sequence is equally unlikely :D
   while (randString !== '55555') {
     timesRun++;
     randString = getRandomDigitsString(len);
@@ -30,13 +31,18 @@ const longRunningOperation = (len, isTimed) => {
   return timesRun;
 };
 
+// this higher-order function leverages spread syntax
+// to refer to all arguments after the first argument supplied to it
+// which allows us to call the callback supplied with whatever arguments
+// it requires! :)
 const timeFn = (fn, ...args) => {
   console.time('long running operation ran for: ');
   fn(...args);
   console.timeEnd('long running operation ran for: ');
 };
 
-timeFn(longRunningOperation, 5, true);
+// uncomment this to learn more about how to measure function runtime / performance
+/* timeFn(longRunningOperation, 5, true); */
 
 // this promise resolves the longRunningOperation with a number of times the while loop ran, or rejects with the error thrown if the number of iterations reaches 150,000
 const myPromise = new Promise((resolve, reject) => {
