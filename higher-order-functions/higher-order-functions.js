@@ -32,3 +32,12 @@ const logSalad = () => {
 
 higherOrderFunction(logPizza);
 higherOrderFunction(logSalad);
+
+// the Array.prototype comes with several higher-order functions designed to abstract the sort of logic we usually want to apply to lists/collections, which usually involves:
+/* 
+  1. applying a transformation to every element in the list, or more generally, "doing something" for every index in the list
+  2. generating a new, dereferenced copy of the list with a transformation applied
+  3. filtering a list and retaining/discarding values based on a condition
+  4. reducing the contents of a list to a single value or data structure (complex or primitive, we'll look at both cases)
+
+*/
