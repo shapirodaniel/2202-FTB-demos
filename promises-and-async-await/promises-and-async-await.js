@@ -15,7 +15,7 @@ const longRunningOperation = (len, isTimed) => {
   let randString = getRandomDigitsString(len);
 
   // any particular random sequence is equally unlikely :D
-  while (randString !== '55555') {
+  while (randString !== '555') {
     timesRun++;
     randString = getRandomDigitsString(len);
     console.log(`randString is: ${randString}\r`);
@@ -47,7 +47,7 @@ const timeFn = (fn, ...args) => {
 // this promise resolves the longRunningOperation with a number of times the while loop ran, or rejects with the error thrown if the number of iterations reaches 150,000
 const myPromise = new Promise((resolve, reject) => {
   try {
-    resolve(longRunningOperation(5));
+    resolve(longRunningOperation(3));
   } catch (err) {
     reject(err);
   }
@@ -55,6 +55,7 @@ const myPromise = new Promise((resolve, reject) => {
 
 // to access the value of the fulfilled promise, we call .then() which resolves the value, and .catch() which handles the reject callback if it's invoked -> notice, these methods are chained! .then() returns a Promise...
 
+// JS gets to this line and tries to run the .then(), but the promise state is still 'pending', so data hasn't arrived to be ready to use, yet...
 myPromise
   .then((numberOfTrials) => {
     console.log('inside myPromise.then(): ', { numberOfTrials });
@@ -63,6 +64,7 @@ myPromise
     const error = { from: 'myPromise.catch()', message: err.message };
     console.dir(error);
   })
+  // finally() blocks or methods run no matter what
   .finally(() => {
     console.log('running myPromise.finally()');
   });
@@ -71,6 +73,8 @@ myPromise
 
 async function getNumberOfTrials() {
   try {
+    // JS says, i'm not going to move forward until the promise settles
+    // so an IOU is registered on the event apparatus
     const numberOfTrials = await myPromise;
     console.log('inside async fn getNumberOfTrials: ', { numberOfTrials });
   } catch (err) {
