@@ -1,8 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-console.log(__dirname);
-
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
   // handle react router
