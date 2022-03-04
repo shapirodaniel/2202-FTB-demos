@@ -1,0 +1,30 @@
+{
+  "name": "crud-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve --port 3000",
+    "build": "webpack --config webpack.config.js",
+    "start:server": "npx json-server --port 4000 --watch db.json",
+    "start:client": "npm run build && npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "babel-loader": "^8.2.3",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-plugin-styled-components": "^2.0.2",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^4.7.4"
+  }
+}
