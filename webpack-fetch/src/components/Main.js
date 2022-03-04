@@ -27,11 +27,11 @@ export default async (username) => {
     const text = await getRandomFact();
 
     const welcome = `
-    <section>
+    <main>
       <h1> Welcome, ${username}!</h1>
       <h2>Here's a random fact for you!</h2>
-      <div id="random-fact">${text}</div>
-    </section>
+      <div id="random-fact">${text.replace(/\s+/, ' ')}</div>
+    </main>
   `;
 
     return welcome;
