@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "price": "170000",
+      "description": "edited product",
+      "url": "https://source.unsplash.com/random/200x200?ecommerce,7",
+      "inStock": false
+    },
+    {
+      "id": 2,
+      "price": 1575,
+      "description": "amazing product 5/7 would buy again",
+      "url": "https://source.unsplash.com/random/200x200?ecommerce,1",
+      "inStock": true
+    },
+    {
+      "id": 3,
+      "price": 2200,
+      "description": "amazing product 5/7 would buy again",
+      "url": "https://source.unsplash.com/random/200x200?ecommerce,3",
+      "inStock": false
+    },
+    {
+      "id": 4,
+      "price": 10400,
+      "description": "amazing product 5/7 would buy again",
+      "url": "https://source.unsplash.com/random/200x200?ecommerce,6",
+      "inStock": false
+    },
+    {
+      "price": "8000",
+      "description": "it's 80",
+      "url": "",
+      "inStock": true,
+      "id": 5
+    },
+    {
+      "price": "50000",
+      "description": "expensive",
+      "url": "https://source.unsplash.com/random/200x200?nature,8",
+      "inStock": true,
+      "id": 6
+    },
+    {
+      "price": "17000",
+      "description": "add functionality back?",
+      "url": "https://source.unsplash.com/random/200x200?ecommerce,1",
+      "inStock": true,
+      "id": 7
+    }
+  ]
+}
