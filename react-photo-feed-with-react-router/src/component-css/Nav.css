@@ -1,0 +1,14 @@
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1em 0;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.active {
+  color: purple;
+  font-weight: bold;
+}

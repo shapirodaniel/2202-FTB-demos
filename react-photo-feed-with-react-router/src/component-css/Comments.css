@@ -1,0 +1,26 @@
+.commentsContainer {
+  width: 100%;
+  line-height: 1.2em;
+}
+
+.singleComment {
+  width: 100%;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.singleComment:nth-child(odd) {
+  background-color: rgb(254, 240, 255);
+}
+
+.name {
+  font-weight: bold;
+  margin-right: 1em;
+}
+
+.comment {
+  text-align: right;
+}

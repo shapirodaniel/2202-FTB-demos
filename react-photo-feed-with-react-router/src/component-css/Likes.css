@@ -1,0 +1,19 @@
+.likesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flexs-start;
+  height: 20px;
+  width: 200px;
+  margin-bottom: 1em;
+}
+
+.likesContainer span {
+  font-size: 10px;
+}
+
+.likesContainer img {
+  height: 18px;
+  width: auto;
+  margin: 0.1em;
+  margin-top: 0.28em;
+}

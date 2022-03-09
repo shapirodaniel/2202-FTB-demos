@@ -1,0 +1,81 @@
+{
+	"posts": [
+		{
+			"postId": 1,
+			"date": "11.10.2021",
+			"author": "oceanbro",
+			"src": "https://images.unsplash.com/photo-1459128806329-1b61d19a0f93?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MnwxfDB8MXxyYW5kb218MHx8bmF0dXJlLHdhdGVyfHx8fHx8MTYzNjU5NzU4NA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=200",
+			"altText": "school of fish",
+			"content": "nothing beats an ocean view!",
+			"likes": 50
+		},
+		{
+			"postId": 2,
+			"date": "11.8.2021",
+			"author": "poseidon's bff",
+			"src": "https://images.unsplash.com/photo-1474267119072-677dd7959e96?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MnwxfDB8MXxyYW5kb218MHx8bmF0dXJlLHdhdGVyfHx8fHx8MTYzNjU5NzU3MQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=200",
+			"altText": "stormy sea",
+			"content": "the sea at night",
+			"likes": 722
+		},
+		{
+			"postId": 3,
+			"date": "11.4.2021",
+			"author": "giantSquidCalamari",
+			"src": "https://images.unsplash.com/photo-1494459940152-1e911caa8cc5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MnwxfDB8MXxyYW5kb218MHx8bmF0dXJlLHdhdGVyfHx8fHx8MTYzNjU5NzU0NQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=200",
+			"altText": "sunset beach",
+			"content": "tranquility everywhere",
+			"likes": 13
+		}
+	],
+	"comments": [
+		{
+			"commentId": 1,
+			"imgComments": [
+				{ "id": 1, "name": "poseidon's bff", "comment": "this is dope!" },
+				{
+					"id": 2,
+					"name": "oceanbro",
+					"comment": "fish party is best party"
+				},
+				{
+					"id": 3,
+					"name": "giantSquidCalamari",
+					"comment": "coral reefs are amazing!"
+				}
+			]
+		},
+		{
+			"commentId": 2,
+			"imgComments": [
+				{ "id": 1, "name": "giantSquidCalamari", "comment": "moody i love it" },
+				{
+					"id": 2,
+					"name": "poseidon's bff",
+					"comment": "yeah the sea was crazy dark tonight!"
+				},
+				{
+					"id": 3,
+					"name": "oceanbro",
+					"comment": "looks like frozen lava this is amazing"
+				}
+			]
+		},
+		{
+			"commentId": 3,
+			"imgComments": [
+				{ "id": 1, "name": "poseidon's bff", "comment": "beautiful rays!" },
+				{
+					"id": 2,
+					"name": "giantSquidCalamari",
+					"comment": "cali is where it's at"
+				},
+				{
+					"id": 3,
+					"name": "oceanbro",
+					"comment": "seconded!"
+				}
+			]
+		}
+	]
+}
