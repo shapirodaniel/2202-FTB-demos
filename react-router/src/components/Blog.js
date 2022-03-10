@@ -3,32 +3,26 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const AllBlogLayout = styled.section`
-  & {
-    display: grid;
-    grid-gap: 0.5rem;
-  }
+  display: grid;
+  grid-gap: 0.5rem;
 
   @media screen and (min-width: 770px) {
-    & {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 
 const NewBlogBtn = styled(Link)`
-  & {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: flex-start;
-    background-color: green;
-    color: white;
-    padding: 0.5rem 1rem;
-    font-size: 22px;
-    border: transparent;
-    cursor: pointer;
-    margin-bottom: 1rem;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  background-color: green;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 22px;
+  border: transparent;
+  cursor: pointer;
+  margin-bottom: 1rem;
 `;
 
 const BlogContainer = styled.article`

@@ -7,13 +7,11 @@ import NewBlogForm from './NewBlogForm';
 import styled from 'styled-components';
 
 const Layout = styled.section`
-  & {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
 `;
 
 export default function RouterWithNav() {

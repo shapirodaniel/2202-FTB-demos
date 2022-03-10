@@ -16,18 +16,20 @@ const Form = styled.form`
     flex-direction: column;
     min-width: 375px;
     max-width: 500px;
-  }
-  & button {
-    margin-top: 1em;
-    padding: 0.5em;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-  }
-  & input[type='submit'] {
-    height: 2.5em;
-    padding: 0.5em;
-    border-radius: 5px;
+
+    button {
+      margin-top: 1em;
+      padding: 0.5em;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    input[type='submit'] {
+      height: 2.5em;
+      padding: 0.5em;
+      border-radius: 5px;
+    }
   }
 `;
 

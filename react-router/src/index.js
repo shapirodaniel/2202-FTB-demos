@@ -7,8 +7,8 @@ import './index.css';
 const App = () => {
   return (
     <main>
-      {/* <SimpleRoutesExample /> */}
-      <RouterWithNav />
+      <SimpleRoutesExample />
+      {/* <RouterWithNav /> */}
     </main>
   );
 };
