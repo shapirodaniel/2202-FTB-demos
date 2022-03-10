@@ -75,6 +75,8 @@ const FormField = styled.div`
 export default function NewBlogForm() {
   const history = useHistory();
 
+  console.dir(history, { depth: null });
+
   const [form, setForm] = useState({
     title: '',
     content: '',

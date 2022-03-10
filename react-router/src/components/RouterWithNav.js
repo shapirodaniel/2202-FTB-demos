@@ -36,6 +36,7 @@ export default function RouterWithNav() {
           <Route exact path="/blog" component={Blog} />
           {/* the /blog/new path must be placed above the wildcard route, otherwise, :blogId will clobber "new" */}
           <Route path="/blog/new" component={NewBlogForm} />
+          {/* :whatever is a "wildcard" that will match literally anything */}
           <Route path="/blog/:blogId" component={SingleBlog} />
         </Switch>
       </Layout>

@@ -71,7 +71,8 @@ export default function Blog() {
         const response = await fetch(`http://localhost:4000/blog`);
         const blogs = await response.json();
 
-        blogs.sort((a, b) => (new Date(a.date) < new Date(b.date) ? -1 : 1));
+        // sorting blogs by date
+        blogs.sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1));
 
         setBlogs(blogs);
       } catch (err) {
