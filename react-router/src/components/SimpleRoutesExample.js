@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+// you might think why do i need exact and Switch?
+// defensive programming: fallbacks for safety
+
 export default function Routes() {
   return (
     <Router>
@@ -9,7 +12,7 @@ export default function Routes() {
       <Switch>
         {/* the exact keyword prevents reac router's default fuzzy matching behavior, which prevents the root path from overriding matches the about / contact routes */}
         {/* try commenting the exact keyword out and notice the behavior change! */}
-        <Route path="/">
+        <Route exact path="/">
           <div>im the home page!</div>
         </Route>
         <Route path="/about">

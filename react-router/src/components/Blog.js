@@ -5,8 +5,9 @@ import styled from 'styled-components';
 const AllBlogLayout = styled.section`
   display: grid;
   grid-gap: 0.5rem;
+  max-width: 900px;
 
-  @media screen and (min-width: 770px) {
+  @media screen and (min-width: 700px) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;

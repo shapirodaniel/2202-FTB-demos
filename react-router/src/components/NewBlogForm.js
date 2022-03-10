@@ -128,7 +128,6 @@ export default function NewBlogForm() {
         </FormField>
         <input type="submit" value={'Publish'} />
         <button
-          type="button"
           onClick={() => {
             history.push('/blog');
           }}

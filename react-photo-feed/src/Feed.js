@@ -64,16 +64,22 @@ function Feed() {
 
   function toggleCommentVisibility(postId) {
     if (visibleComments[postId]) {
+      // you can also copy objects with spread syntax
+      // { ...object } copies object's fields into a new, dereferenced object
+      // we do this so we don't end up running into "pointer" errors
       const clonedPosts = { ...visibleComments };
       delete clonedPosts[postId];
       setVisibleComments(clonedPosts);
     } else {
+      // if the id is currently to false,
+      // we flip it to true
       setVisibleComments({ ...visibleComments, [postId]: true });
     }
   }
 
   return (
     <section>
+      {/* destruturing each individual post at every index in our posts array */}
       {posts.map(({ postId, date, author, src, altText, content, likes }) => (
         <div key={postId} className="post-container">
           <div className="author-and-date">
@@ -82,6 +88,7 @@ function Feed() {
             <span className="author">{author}</span>
           </div>
           <img src={src} alt={altText} />
+          {/* inline component declaration: this is where we mount a component, often coming from another file */}
           <Likes likes={likes} />
           <div>{content}</div>
           <button onClick={() => toggleCommentVisibility(postId)}>

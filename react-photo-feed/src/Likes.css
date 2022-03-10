@@ -1,0 +1,15 @@
+#like-id {
+  display: flex;
+  align-items: center;
+  justify-content: flexstart;
+  height: 20px;
+  width: 200px;
+  margin-bottom: 1em;
+}
+
+#like-id img {
+  height: 18px;
+  width: auto;
+  margin: 0.1em;
+  margin-top: 0.28em;
+}
