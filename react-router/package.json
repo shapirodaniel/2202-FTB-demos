@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack serve --port 3000",
     "build": "webpack --config webpack.config.js",
-    "start": "npm run build && npm run dev"
+    "start:client": "npm run build && npm run dev",
+    "start:server": "npx json-server --watch db.json --port 4000"
   },
   "keywords": [],
   "author": "",

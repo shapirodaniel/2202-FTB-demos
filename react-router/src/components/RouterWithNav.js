@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Nav from './Nav';
 import Blog from './Blog';
+import SingleBlog from './SingleBlog';
+import NewBlogForm from './NewBlogForm';
 import styled from 'styled-components';
 
 const Layout = styled.section`
@@ -11,22 +13,6 @@ const Layout = styled.section`
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-  }
-
-  @media screen and (min-width: 770px) {
-    & {
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: center;
-    }
-
-    & article {
-      flex: 0 0 40%;
-      margin: 1rem;
-      min-height: 300px;
-      max-height: 300px;
-    }
   }
 `;
 
@@ -45,7 +31,11 @@ export default function RouterWithNav() {
           <Route path="/contact">
             <div>im the contact page!</div>
           </Route>
-          <Route path="/blog" component={Blog} />
+          {/* without the exact keyword, the Blog route will clobber the SingleBlog route */}
+          <Route exact path="/blog" component={Blog} />
+          {/* the /blog/new path must be placed above the wildcard route, otherwise, :blogId will clobber "new" */}
+          <Route path="/blog/new" component={NewBlogForm} />
+          <Route path="/blog/:blogId" component={SingleBlog} />
         </Switch>
       </Layout>
     </Router>
