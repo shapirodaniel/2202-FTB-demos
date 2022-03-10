@@ -23,6 +23,9 @@ export default function RouterWithNav() {
       <Layout>
         <Switch>
           <Route exact path="/">
+            <div>welcome!</div>
+          </Route>
+          <Route path="/home">
             <div>im the home page!</div>
           </Route>
           <Route path="/about">
