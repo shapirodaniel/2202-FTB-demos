@@ -15,6 +15,7 @@ const NavContainer = styled.nav`
     align-items: center;
     justify-content: space-between;
     padding: 1rem 0;
+    margin-bottom: 1rem;
   }
 
   & a {
@@ -25,11 +26,6 @@ const NavContainer = styled.nav`
     color: green;
     font-weight: bold;
   }
-
-  & #logo {
-    padding: 1rem;
-    border-radius: 8px;
-  }
 `;
 
 const StyledNavLink = styled(NavLink)``;
@@ -37,7 +33,7 @@ const StyledNavLink = styled(NavLink)``;
 export default function Nav() {
   return (
     <NavContainer>
-      <div id="logo">{'< logo >'}</div>
+      <div id="logo">{'[logo]'}</div>
       <div>
         {links.map(({ id, name, to }) => (
           // the exact keyword prevents fuzzy matching
