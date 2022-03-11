@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "error": null,
+  "data": {
+    "posts": [],
+    "messages": [],
+    "_id": "622b8075f3f2a80017099381",
+    "username": "john",
+    "cohort": "622b62e9f3f2a80017099369",
+    "__v": 0
+  }
+}

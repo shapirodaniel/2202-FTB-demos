@@ -1,0 +1,11 @@
+# GET /api/2202-FTB-PT-WEB-FT/posts
+curl http://strangers-things.herokuapp.com/api/2202-FTB-PT-WEB-FT/posts
+
+# POST /api/2202-FTB-PT-WEB-FT/users/register
+curl http://strangers-things.herokuapp.com/api/2202-FTB-PT-WEB-FT/users/register -X POST -H 'Content-Type:application/json' -d '{"user":{"username":"john","password":"123"}}'
+
+# POST /api/2202-FTB-PT-WEB-FT/users/login
+curl http://strangers-things.herokuapp.com/api/2202-FTB-PT-WEB-FT/users/login -X POST -H 'Content-Type:application/json' -d '{"user":{"username":"john","password":"123"}}'
+
+# GET /api/2202-FTB-PT-WEB-FT/users/me
+curl http://strangers-things.herokuapp.com/api/2202-FTB-PT-WEB-FT/users/me -H 'Content-Type:application/json' -H 'Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjJiODA3NWYzZjJhODAwMTcwOTkzODEiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE2NDcwMTgyODh9.XeQLJCr2rN48eyQ-VoXekaQXxDKVHMa7yDUXW53Nnls'

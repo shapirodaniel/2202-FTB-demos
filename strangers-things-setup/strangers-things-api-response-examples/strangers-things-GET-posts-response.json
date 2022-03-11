@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "error": null,
+  "data": {
+    "posts": [
+      {
+        "location": "[On Request]",
+        "willDeliver": false,
+        "messages": [],
+        "active": true,
+        "_id": "5fac2643586d520017dee613",
+        "author": { "_id": "5fac2643586d520017dee610", "username": "joe1234" },
+        "cohort": "5fac2643586d520017dee60f",
+        "title": "Practically new Stradivarius",
+        "description": "I've really only used this three or four times.  I thought it would be a good purchase, shows what I know.",
+        "price": "$14.3 million",
+        "createdAt": "2020-11-11T17:58:27.221Z",
+        "updatedAt": "2020-11-11T17:58:27.273Z",
+        "__v": 0,
+        "isAuthor": false
+      },
+      {
+        "location": "[On Request]",
+        "willDeliver": true,
+        "messages": [],
+        "active": true,
+        "_id": "5fac2643586d520017dee614",
+        "author": { "_id": "5fac2643586d520017dee611", "username": "jane1234" },
+        "cohort": "5fac2643586d520017dee60f",
+        "title": "Golden Retriever puppies",
+        "description": "Not looking for any money, just want to find a good home for these four beautiful pups.",
+        "price": "free",
+        "createdAt": "2020-11-11T17:58:27.221Z",
+        "updatedAt": "2020-11-11T17:58:27.287Z",
+        "__v": 0,
+        "isAuthor": false
+      },
+      {
+        "location": "Ames, IA",
+        "willDeliver": true,
+        "messages": [],
+        "active": true,
+        "_id": "5fac2643586d520017dee615",
+        "author": {
+          "_id": "5fac2643586d520017dee612",
+          "username": "caesar1234"
+        },
+        "cohort": "5fac2643586d520017dee60f",
+        "title": "NordicTrack Freestrider Elliptical Trainer",
+        "description": "To be honest, it is more amazing than my resolve.",
+        "price": "$1400, OBO",
+        "createdAt": "2020-11-11T17:58:27.222Z",
+        "updatedAt": "2020-11-11T17:58:27.292Z",
+        "__v": 0,
+        "isAuthor": false
+      },
+      {
+        "location": "[On Request]",
+        "willDeliver": false,
+        "messages": [],
+        "active": true,
+        "_id": "61fb33976b7ddb001780979b",
+        "title": "10",
+        "description": "10",
+        "price": "10",
+        "author": {
+          "_id": "61fb33246b7ddb001780979a",
+          "username": "captainAmerica"
+        },
+        "cohort": "5fac2643586d520017dee60f",
+        "createdAt": "2022-02-03T01:44:55.508Z",
+        "updatedAt": "2022-02-03T01:44:55.508Z",
+        "__v": 0,
+        "isAuthor": false
+      }
+    ]
+  }
+}

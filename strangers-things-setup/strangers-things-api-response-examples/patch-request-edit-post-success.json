@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "error": null,
+  "data": {
+    "post": {
+      "location": "Chicago, IL",
+      "willDeliver": true,
+      "messages": [],
+      "active": true,
+      "_id": "622b83c8f3f2a80017099382",
+      "title": "my edited post",
+      "description": "this is my new post description",
+      "price": "$500.00",
+      "author": { "_id": "622b8075f3f2a80017099381", "username": "john" },
+      "cohort": "622b62e9f3f2a80017099369",
+      "createdAt": "2022-03-11T17:15:52.733Z",
+      "updatedAt": "2022-03-11T17:18:58.100Z",
+      "__v": 0,
+      "isAuthor": true
+    }
+  }
+}
