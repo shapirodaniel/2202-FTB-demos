@@ -1,36 +1,34 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { useAuth } from './custom-hooks';
-import { Form } from './components';
+import { LoginOrRegister, Posts, Nav, NewPost } from './components';
 
 function App() {
   const { token, isLoggedIn, logout } = useAuth();
 
-  const route = (
-    <div>
-      <div>token value is: {token || "''"}</div>
-      <div>isLoggedIn? {isLoggedIn.toString()}</div>
-      <Form />
-      <button onClick={() => logout()}>Logout</button>
-    </div>
-  );
-
   return (
     <Router>
-      <nav>
-        {isLoggedIn && <Link to="/">logged in link</Link>}
-        {!isLoggedIn && <Link to="/">logged out link</Link>}
-      </nav>
+      <Nav />
+      <Switch>
+        {/* logged in routes */}
+        {isLoggedIn && (
+          <>
+            {/* anything that requires an authorization header in the fetch, any CREATE, UPDATE, or DELETE action */}
+            <Route exact path="/posts" component={Posts} />
+            <Route path="/posts/new" component={NewPost} />
+          </>
+        )}
 
-      <Route path="/" component={() => route} />
-
-      {/* this would be an example of an UNAUTHENTICATED ROUTE */}
-      {!isLoggedIn && (
-        <Route
-          path="/pizza"
-          component={() => <div>not logged in with pizza</div>}
-        />
-      )}
+        {/* logged out routes */}
+        {!isLoggedIn && (
+          <>
+            {/* anything that requires an authorization header in the fetch, any CREATE, UPDATE, or DELETE action */}
+            <Route exact path="/posts" component={Posts} />
+            <Route path="/login" component={LoginOrRegister} />
+            <Route path="/register" component={LoginOrRegister} />
+          </>
+        )}
+      </Switch>
     </Router>
   );
 }
