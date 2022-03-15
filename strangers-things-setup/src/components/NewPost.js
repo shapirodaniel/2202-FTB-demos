@@ -81,18 +81,35 @@
 // }
 
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useAuth } from '../custom-hooks';
 
 const NewPost = () => {
+  const { search, pathname } = useLocation();
+  console.log(search);
+
+  const isEditForm = pathname.indexOf('edit') !== -1;
+
+  const searchObj = new URLSearchParams(search);
+  const title = searchObj.get('title');
+  const description = searchObj.get('description');
+  const price = searchObj.get('price');
+
+  const initEditFormValues = { title, description, price };
+  console.log(initEditFormValues);
+
   const history = useHistory();
   const { token } = useAuth();
   //console.log(token);
-  const [form, setForm] = useState({
-    title: '',
-    description: '',
-    price: '',
-  });
+  const [form, setForm] = useState(
+    isEditForm
+      ? initEditFormValues
+      : {
+          title: '',
+          description: '',
+          price: '',
+        }
+  );
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

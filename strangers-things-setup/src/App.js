@@ -16,6 +16,7 @@ function App() {
             {/* anything that requires an authorization header in the fetch, any CREATE, UPDATE, or DELETE action */}
             <Route exact path="/posts" component={Posts} />
             <Route path="/posts/new" component={NewPost} />
+            <Route path="/posts/:postId/edit" component={NewPost} />
             <Route path="/me" component={Me} />
           </>
         )}
