@@ -4,7 +4,7 @@ import { useAuth } from './custom-hooks';
 import { LoginOrRegister, Posts, Nav, NewPost } from './components';
 
 function App() {
-  const { token, isLoggedIn, logout } = useAuth();
+  const { isLoggedIn } = useAuth();
 
   return (
     <Router>
