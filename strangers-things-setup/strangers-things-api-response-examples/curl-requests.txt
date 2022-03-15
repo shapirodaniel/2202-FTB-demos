@@ -8,4 +8,10 @@ curl http://strangers-things.herokuapp.com/api/2202-FTB-PT-WEB-FT/users/register
 curl http://strangers-things.herokuapp.com/api/2202-FTB-PT-WEB-FT/users/login -X POST -H 'Content-Type:application/json' -d '{"user":{"username":"john","password":"123"}}'
 
 # GET /api/2202-FTB-PT-WEB-FT/users/me
-curl http://strangers-things.herokuapp.com/api/2202-FTB-PT-WEB-FT/users/me -H 'Content-Type:application/json' -H 'Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjJiODA3NWYzZjJhODAwMTcwOTkzODEiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE2NDcwMTgyODh9.XeQLJCr2rN48eyQ-VoXekaQXxDKVHMa7yDUXW53Nnls'
+curl http://strangers-things.herokuapp.com/api/2202-FTB-PT-WEB-FT/users/me -H 'Content-Type:application/json' -H 'Authorization:Bearer '"$ST_TOKEN"''
+
+# POST /api/2202-FTB-PT-WEB-FT/posts 
+curl http://strangers-things.herokuapp.com/api/2202-FTB-PT-WEB-FT/posts -X POST -H 'Content-Type:application/json' -H 'Authorization:Bearer '"$ST_TOKEN"'' -d '{"post":{"title":"my second new post", "description":"this is my second new post", "price":"$20.00"}}'
+
+# POST /api/2202-FTB-PT-WEB-FT/posts/:postId/messages 
+curl http://strangers-things.herokuapp.com/api/2202-FTB-PT-WEB-FT/posts/6230b305b8f8e00017e40ede/messages -X POST -H 'Content-Type:application/json' -H 'Authorization:Bearer '"$JOHN_ST_TOKEN"'' -d '{"message":{"content":"hey jane love your second post, even better!"}}'

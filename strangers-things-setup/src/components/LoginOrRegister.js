@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { useAuth } from '../custom-hooks';
 
 export default function LoginOrRegister() {
+  const history = useHistory();
   const { updateAuthStatus } = useAuth();
   const { pathname } = useLocation();
 
@@ -37,6 +38,7 @@ export default function LoginOrRegister() {
       if (success) {
         localStorage.st_token = data.token;
         updateAuthStatus();
+        history.push('/me');
       } else {
         throw new Error(
           `error ${
