@@ -1,0 +1,9 @@
+# adding mom to the db via POST :)
+curl http://localhost:4000/api/users -X POST -H 'Content-Type:application/json' -d '{"username":"christine","password":"mymom","email":"mom@mail.com"}'
+
+# changing mom's email address via PATCH :)
+curl http://localhost:4000/api/users/6 -X PATCH -H 'Content-Type:application/json' -d '{"username":"christine","password":"mymom","email":"supermom@mail.com"}'
+
+# deleting my mom :(
+# no headers necessary!
+curl http://localhost:4000/api/users/6 -X DELETE
