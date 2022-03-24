@@ -1,9 +1,9 @@
 const express = require('express');
 const apiRouter = express.Router();
-const puppiesRouter = require('./puppies');
-const ownersRouter = require('./owners');
-const tricksRouter = require('./tricks');
-const puppyTricksRouter = require('./puppy_tricks');
+const trainsRouter = require('./trains');
+const tracksRouter = require('./tracks');
+const stationsRouter = require('./stations');
+const routesRouter = require('./routes');
 
 module.exports = apiRouter;
 
@@ -11,7 +11,7 @@ apiRouter.get('/health', (_req, res) => {
   res.send({ message: 'healthy' });
 });
 
-apiRouter.use('/puppies', puppiesRouter);
-apiRouter.use('/owners', ownersRouter);
-apiRouter.use('/tricks', tricksRouter);
-apiRouter.use('/puppy_tricks', puppyTricksRouter);
+apiRouter.use('/trains', trainsRouter);
+apiRouter.use('/tracks', tracksRouter);
+apiRouter.use('/stations', stationsRouter);
+apiRouter.use('/routes', routesRouter);
