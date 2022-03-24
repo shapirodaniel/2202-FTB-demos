@@ -3,7 +3,7 @@ const apiRouter = express.Router();
 const trainsRouter = require('./trains');
 const tracksRouter = require('./tracks');
 const stationsRouter = require('./stations');
-const routesRouter = require('./routes');
+const schedulesRouter = require('./schedules');
 
 module.exports = apiRouter;
 
@@ -14,4 +14,4 @@ apiRouter.get('/health', (_req, res) => {
 apiRouter.use('/trains', trainsRouter);
 apiRouter.use('/tracks', tracksRouter);
 apiRouter.use('/stations', stationsRouter);
-apiRouter.use('/routes', routesRouter);
+apiRouter.use('/schedules', schedulesRouter);
