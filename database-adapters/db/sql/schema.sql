@@ -4,28 +4,31 @@ drop table if exists
   tracks, 
   stations, 
   admins, 
-  employees;
+  users;
 
-drop type if exists employee_type;
+drop type if exists user_type;
 
-create type employee_type as enum(
+create type user_type as enum(
+  'passenger',
   'station_attendant', 
   'conductor', 
   'dispatcher', 
   'yard_master'
 );
 
-create table employees (
+create table users (
   id serial primary key,
-  employee_type employee_type not null
+  username text not null,
+  password text not null,
+  user_type user_type not null
 );
 
--- in create admin logic, we'll check the employee_type 
--- of the employee id we're attempting to add to the admins table
+-- in create admin logic, we'll check the user_type 
+-- of the user id we're attempting to add to the admins table
 -- if it's not dispatcher or admin, we'll reject the transaction
 create table admins (
   id serial primary key,
-  employee_id integer references employees (id)
+  user_id integer references users (id)
 );
 
 create table stations (
@@ -49,6 +52,6 @@ create table schedules (
   station_id integer references stations (id),
   track_id integer references tracks (id),
   sequence_no integer not null,
-  time_in text not null,
-  time_out text not null
+  time_in varchar(255) not null,
+  time_out varchar(255) not null
 );

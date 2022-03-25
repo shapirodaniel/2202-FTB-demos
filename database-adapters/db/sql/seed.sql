@@ -1,17 +1,31 @@
-insert into employees (employee_type)
-values ('station_attendant'), ('conductor'), ('dispatcher'), ('yard_master');
+insert into users (username, password, user_type)
+values 
+  ('albert', '123', 'station_attendant'), 
+  ('felix', '123', 'conductor'), 
+  ('wally', '123', 'dispatcher'), 
+  ('beatrice', '123', 'yard_master');
 
-insert into admins (employee_id)
+insert into admins (user_id)
 values (3), (4);
 
 insert into stations (station_name)
-values ('red'), ('blue'), ('green'), ('yellow'), ('purple');
+values 
+  ('red'), 
+  ('blue'), 
+  ('green'), 
+  ('yellow'), 
+  ('purple');
 
 insert into tracks (track_name)
 values ('A'), ('B'), ('C'), ('D'), ('E'), ('F');
 
 insert into trains (train_name)
-values ('northern_line'), ('mighty_mountains_loop'), ('sea_breeze'), ('silent_tundra'), ('central_snowland_route');
+values 
+  ('northern_line'), 
+  ('mighty_mountains_loop'), 
+  ('sea_breeze'), 
+  ('silent_tundra'), 
+  ('central_snowland_route');
 
 insert into schedules (
   train_id, 
