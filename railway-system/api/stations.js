@@ -3,6 +3,7 @@ const stationsRouter = express.Router();
 const { Station } = require('../db');
 module.exports = stationsRouter;
 
+// this implementation leverages query params
 // query params: ?key1=value1&key2=value2...
 // express gives us access to these key-val pairs
 // on the req.query object
