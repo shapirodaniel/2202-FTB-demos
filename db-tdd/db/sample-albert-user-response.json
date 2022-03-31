@@ -1,0 +1,11 @@
+{
+  "user": {
+    "id": 1,
+    "username": "albert",
+    "password": "123",
+    "posts": [
+      { "id": 1, "user_id": 1, "content": "welcome to my blog!" },
+      { "id": 2, "user_id": 1, "content": "this is my second post!" }
+    ]
+  }
+}

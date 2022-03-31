@@ -1,0 +1,22 @@
+{
+  "name": "db-tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server:dev": "nodemon index.js",
+    "db:seed": "nodemon ./db/seed.js",
+    "test:db": "jest ./db/index.spec.js --verbose --runInBand --setTimeout 10000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "jest": "^27.5.1",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
