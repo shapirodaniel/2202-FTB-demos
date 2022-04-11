@@ -39,7 +39,7 @@ class LinkedList {
   upsert(key, data) {
     let curr = this._head;
 
-    while (curr.next) {
+    while (curr) {
       if (curr.value.key === key) {
         curr.value.data = data;
         return this;
@@ -119,5 +119,10 @@ myHashTable.add('albert', '5550001234');
 
 myHashTable.prettyPrint();
 
-const foundKeyValuePair = myHashTable.search('bob'); // -> 5559876543 | 5559876543
-console.log({ foundKeyValuePair });
+// testing upsert logic
+const bobBeforeUpsert = myHashTable.search('bob');
+myHashTable.add('bob', '2223334444');
+const bobAfterUpsert = myHashTable.search('bob');
+
+console.log({ bobBeforeUpsert }); // 5559876543
+console.log({ bobAfterUpsert }); // 2223334444
