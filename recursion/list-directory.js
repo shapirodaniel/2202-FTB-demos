@@ -59,7 +59,8 @@ const exampleDirectory = {
 };
 
 // example
-console.log(listDirectory(exampleDirectory));
+const result = listDirectory(exampleDirectory);
+console.log({ result });
 
 /* 
   yields:
@@ -91,3 +92,23 @@ function listDirectory(directory, list = []) {
   // once outer children loop has terminated, return list
   return list;
 }
+
+// test phase: simple example
+const simpleDirectory = {
+  type: 'dir',
+  name: 'dirA',
+  children: [
+    {
+      type: 'file',
+      name: 'fileA',
+    },
+    {
+      type: 'dir',
+      name: 'dirB',
+      children: [],
+    },
+  ],
+};
+
+const simpleResult = listDirectory(simpleDirectory);
+console.log({ simpleResult });
