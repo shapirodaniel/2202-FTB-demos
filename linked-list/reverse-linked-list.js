@@ -49,8 +49,8 @@ console.dir(list, { depth: null });
 
 /* iterative solution */
 
-function reverseLLIterative(list) {
-  let curr = list.head,
+function reverseLLIterative(head) {
+  let curr = head,
     previous = null,
     next = curr.next;
 
@@ -62,29 +62,26 @@ function reverseLLIterative(list) {
     if (curr) next = curr.next;
   }
 
-  list.head = previous;
-  return list;
+  head = previous;
+  return head;
 }
 
 /* recursive solution */
 
 // head -> 1 -> 2
 // head -> 2 -> 1
-function reverseLLRecursive(list) {
-  if (!list.next) {
-    return list;
+function reverseLLRecursive(head) {
+  if (!head || !head.next) {
+    return head;
   }
 
-  list.next = reverseLLRecursive(list.next);
-  list.head = list;
-  return list;
+  const rest = reverseLLRecursive(head.next);
+  head.next.next = head;
+  head.next = null;
+  return rest;
 }
 
-const reversedListIterative = reverseLLIterative(list);
-const reversedListRecursive = reverseLLRecursive(list);
-console.log(list.head === reversedListIterative.head); // true
-console.log(list.head === reversedListRecursive.head); // true
-console.dir(reversedListRecursive, { depth: null });
-
-// console.dir(list, { depth: null });
+list.head = reverseLLIterative(list.head);
+// list.head = reverseLLRecursive(list.head);
+console.dir(list, { depth: null });
 // should yield a list structured: 1 -> 2 -> 3 -> 4 -> 5 -> 6
