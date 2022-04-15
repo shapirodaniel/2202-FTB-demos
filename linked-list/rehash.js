@@ -67,7 +67,22 @@ function hopToFreeIndex(table) {
 
   // make sure iterator is not a factor of len
   // to avoid cycles that never touch certain table slots
-  while (len % i === 0 && len - i <= 2) {
+
+  // eg, if len == 9 and i == 3
+  // 9 % 3 == 0, i++ -> 4
+  // 9 % 4 == 1, ok -> we know we won't hit a cycle until we've
+  // touched every slot in the underlying array
+
+  // eg, if len == 10 and i == 3
+  // 10 % 3 == 1 -> ok
+
+  // eg, if len == 12 and i == 3
+  // 12 % 3 == 0
+  // 12 % 4 == 0
+  // 12 % 5 == 2, 2 % 2 == 0 -> keep looking
+  // 12 % 6 == 0
+  // 12 % 7 == 5, 5 % 2 == 1 -> ok
+  while (len % i === 0 || (len % i) % 2 === 0) {
     i++;
   }
 
